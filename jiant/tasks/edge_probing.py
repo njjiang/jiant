@@ -355,9 +355,9 @@ register_task(
     single_sided=True,
 )(EdgeProbingTask)
 register_task(
-    "edges-cb-EmbeddingS",
-    rel_path="edges/cb_EmbeddingS",
+    "edges-cb-environment",
+    rel_path="edges/cb_environment",
     label_file="labels.txt",
-    files_by_split={"train": "cb_EmbeddingS_train.json", "val": "cb_EmbeddingS_dev.json", "test": "cb_EmbeddingS_test.json"},
+    files_by_split={"train": "cb_environment_train.json", "val": "cb_environment_dev.json", "test": "cb_environment_test.json"},
     single_sided=True,
 )(EdgeProbingTask)
