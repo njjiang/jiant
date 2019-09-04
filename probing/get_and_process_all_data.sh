@@ -31,10 +31,10 @@ function preproc_task() {
     python $HERE/get_edge_data_labels.py -o $TASK_DIR/labels.txt \
       -i $TASK_DIR/*.json -s
     # Retokenize for each tokenizer we need.
-    python $HERE/retokenize_edge_data.py -t "MosesTokenizer" $TASK_DIR/*.json
-    python $HERE/retokenize_edge_data.py -t "OpenAI.BPE"     $TASK_DIR/*.json
-    python $HERE/retokenize_edge_data.py -t "bert-base-uncased"  $TASK_DIR/*.json
-    python $HERE/retokenize_edge_data.py -t "bert-large-uncased" $TASK_DIR/*.json
+    #python $HERE/retokenize_edge_data.py -t "MosesTokenizer" $TASK_DIR/*.json
+    #python $HERE/retokenize_edge_data.py -t "OpenAI.BPE"     $TASK_DIR/*.json
+    #python $HERE/retokenize_edge_data.py -t "bert-base-uncased"  $TASK_DIR/*.json
+    python $HERE/retokenize_edge_data.py -t "bert-large-cased" $TASK_DIR/*.json
 
     # Convert the original version to tfrecord.
     python $HERE/convert_edge_data_to_tfrecord.py $TASK_DIR/*.json
@@ -100,9 +100,15 @@ function get_semeval() {
     preproc_task $OUTPUT_DIR/semeval
 }
 
-get_ontonotes
-get_spr_dpr
-get_ud
+#get_ontonotes
+#get_spr_dpr
+#get_ud
 
-get_semeval
+#get_semeval
+#preproc_task ~/jiant/glue_data/edges/cb_EmbeddingS
+#preproc_task ~/jiant/glue_data/edges/cb_MatSubjPer
+#preproc_task ~/jiant/glue_data/edges/cb_Embedding
+
+preproc_task ~/jiant/glue_data/edges/cb_EmbeddingS_v
+preproc_task ~/jiant/glue_data/edges/cb_factive_v
 

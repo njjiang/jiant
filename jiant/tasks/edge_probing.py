@@ -176,7 +176,9 @@ class EdgeProbingTask(Task):
 
     @classmethod
     def _make_span_field(cls, s, text_field, offset=1):
-        return SpanField(s[0] + offset, s[1] - 1 + offset, text_field)
+        #return SpanField(s[0] + offset, s[1] - 1 + offset, text_field)
+        # Hacky way of probing [CLS]
+        return SpanField(0, 0, text_field)
 
     def make_instance(self, record, idx, indexers, model_preprocessing_interface) -> Type[Instance]:
         """Convert a single record to an AllenNLP Instance."""
@@ -342,4 +344,20 @@ register_task(
     rel_path="edges/tacred/rel",
     label_file="labels.txt",
     files_by_split={"train": "train.json", "val": "dev.json", "test": "test.json"},
+)(EdgeProbingTask)
+
+# CB edge probing
+register_task(
+    "edges-cb-factive",
+    rel_path="edges/cb_factive",
+    label_file="labels.txt",
+    files_by_split={"train": "cb_factive_train.json", "val": "cb_factive_dev.json", "test": "cb_factive_test.json"},
+    single_sided=True,
+)(EdgeProbingTask)
+register_task(
+    "edges-cb-EmbeddingS",
+    rel_path="edges/cb_EmbeddingS",
+    label_file="labels.txt",
+    files_by_split={"train": "cb_EmbeddingS_train.json", "val": "cb_EmbeddingS_dev.json", "test": "cb_EmbeddingS_test.json"},
+    single_sided=True,
 )(EdgeProbingTask)
