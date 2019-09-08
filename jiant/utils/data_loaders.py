@@ -12,6 +12,7 @@ from allennlp.data import vocabulary
 
 from jiant.utils.tokenizers import get_tokenizer
 from jiant.utils.retokenize import realign_spans
+from probing.retokenize_edge_data import retokenize_record
 
 
 def load_span_data(tokenizer_name, file_name, label_fn=None, has_labels=True):
@@ -261,6 +262,38 @@ def load_diagnostic_tsv(
         "ix_to_logic_dic": ix_to_logic_dic,
         "ix_to_knowledge_dic": ix_to_knowledge_dic,
     }
+
+
+def load_factuality_conll(data_file, tokenizer_name, max_seq_len=-1):
+    """
+    Load conll format data for factuality and do tokenization and realignment
+    First, parse conll into a list of json records
+    Then, call `realign_span` to for tokenization and realignment using the json records
+    :param data_file: path to data file
+    :param max_seq_len: max sequence length, -1 for keeping the whole sequence
+    :return sents: tokenized sentence
+    """
+    records = []
+    # TODO(njjiang) parallelize reading conll
+    for idx, sent in enumerate(open(data_file, encoding="utf-8").read().strip().split("\n\n")):
+        record = {"text": "", "targets": [], "idx": idx}
+        words = []
+        id2score = {}
+        for i, line in enumerate(sent.split("\n")):
+            if line.startswith("#"):
+                continue
+            fields = line.split("\t")
+            words.append(fields[1])
+            if fields[2] != "_":
+                record["targets"].append({"span1": [i, i+1],
+                                          "label": float(fields[2]),
+                                          "span_text": fields[1], })
+                id2score[int(fields[0])] = float(fields[2])
+        record["text"] = " ".join(words)
+        records.append(record)
+
+    tokenized_records = list(map(lambda x: retokenize_record(x, tokenizer_name), records))
+    return tokenized_records
 
 
 def get_tag_list(tag_vocab):

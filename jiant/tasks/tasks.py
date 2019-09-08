@@ -19,10 +19,10 @@ from allennlp.data.fields import (
     MultiLabelField,
     SpanField,
     TextField,
-)
+    ArrayField)
 from allennlp.data.token_indexers import SingleIdTokenIndexer
 from allennlp.training.metrics import Average, BooleanAccuracy, CategoricalAccuracy, F1Measure
-from sklearn.metrics import mean_squared_error
+from sklearn.metrics import mean_squared_error, mean_absolute_error
 
 from jiant.allennlp_mods.correlation import Correlation
 from jiant.allennlp_mods.numeric_field import NumericField
@@ -34,6 +34,7 @@ from jiant.utils.data_loaders import (
     load_tsv,
     tokenize_and_truncate,
     load_pair_nli_jsonl,
+    load_factuality_conll,
 )
 from jiant.utils.tokenizers import get_tokenizer
 from jiant.tasks.registry import register_task  # global task registry
@@ -2874,3 +2875,82 @@ class BooleanQuestionTask(PairClassificationTask):
         for split in splits:
             st = self.get_split_text(split)
             self.example_counts[split] = len(st)
+
+
+@register_task("factbank", rel_path="FactBank")
+@register_task("meantime", rel_path="MEANTIME")
+@register_task("uw", rel_path="UW")
+@register_task("uds_ih2", rel_path="UDS_IH2")
+class FactualityTask(Task):
+    def __init__(self, name, **kw):
+        super().__init__(name, **kw)
+        self.n_classes = 1
+        self.scorer1 = Average()  # for average MSE
+        self.scorer2 = Correlation("pearson")
+        self.scorers = [self.scorer1, self.scorer2]
+        self.val_metric = "%s_mae" % self.name
+        self.val_metric_decreases = False
+        self.train: List[Dict] = []
+        self.val: List[Dict] = []
+        self.test: List[Dict] = []
+
+    @classmethod
+    def _make_span_field(cls, s, text_field, offset=1):
+        return SpanField(s[0] + offset, s[1] - 1 + offset, text_field)
+
+    def load_data(self):
+        """ Load data """
+        self.train = load_factuality_conll(
+            os.path.join(self.path, "train.conll"),
+            tokenizer_name=self.tokenizer_name,
+            max_seq_len=self.max_seq_len,
+        )
+        self.val = load_factuality_conll(
+            os.path.join(self.path, "dev.conll"),
+            tokenizer_name=self.tokenizer_name,
+            max_seq_len=self.max_seq_len,
+        )
+        self.test = load_factuality_conll(
+            os.path.join(self.path, "test.conll"),
+            tokenizer_name=self.tokenizer_name,
+            max_seq_len=self.max_seq_len,
+        )
+        self.sentences = self.train_data_text[0] + self.val_data_text[0]
+        log.info("\tFinished loading factuality data %s.".format(self.name))
+
+    def process_split(self, records, indexers, boundary_token_fn) -> Iterable[Type[Instance]]:
+        """ Process split text into a list of AllenNLP Instances. """
+        def _make_instance(record, indexers, boundary_token_fn):
+            """Convert a single record to an AllenNLP Instance."""
+            tokens = record["text"].split()  # already space-tokenized by Moses
+            tokens = boundary_token_fn(tokens)  # apply model-appropriate variants of [cls] and [sep].
+            text_field = sentence_to_text_field(tokens, indexers)
+
+            d = {}
+            d["idx"] = MetadataField(record["idx"])
+
+            d["input1"] = text_field
+
+            d["span1s"] = ListField(
+                [self._make_span_field(t["span1"], text_field, 1) for t in record["targets"]]
+            )
+
+            # a list of factuality scores for the predicates in this sentence
+            labels = [t["label"] for t in record["targets"]]
+            d["labels"] = ArrayField(labels, skip_indexing=False)
+            return Instance(d)
+
+        def _map_fn(r):
+            return _make_instance(r, indexers, boundary_token_fn)
+
+        return map(_map_fn, records)
+
+    def get_metrics(self, reset=False):
+        mae = self.scorer1.get_metric(reset)
+        pearsonr = self.scorer2.get_metric(reset)
+        return {"mae": mae, "pearsonr": pearsonr}
+
+    def update_metrics(self, logits, labels, tagmask=None):
+        self.scorer1(mean_absolute_error(logits, labels))  # update average MSE
+        self.scorer2(logits, labels)
+        return
