@@ -16,6 +16,8 @@ from torch.nn.modules.linear import Linear
 from torch.nn.modules.rnn import LSTMCell
 
 from jiant.modules.simple_modules import Pooler
+from jiant.modules.attention import BahdanauAttention
+from jiant.preprocess import SOS_TOK, EOS_TOK, UNK_TOK
 
 
 class Seq2SeqDecoder(Model):
@@ -38,19 +40,14 @@ class Seq2SeqDecoder(Model):
     ) -> None:
         super(Seq2SeqDecoder, self).__init__(vocab)
 
-        # deprecated module
-        log.warning(
-            "DeprecationWarning: modules.Seq2SeqDecoder is deprecated and is no longer maintained"
-        )
-
         self._max_decoding_steps = max_decoding_steps
         self._target_namespace = target_namespace
 
         # We need the start symbol to provide as the input at the first timestep of decoding, and
         # end symbol as a way to indicate the end of the decoded sequence.
-        self._start_index = self.vocab.get_token_index(START_SYMBOL, self._target_namespace)
-        self._end_index = self.vocab.get_token_index(END_SYMBOL, self._target_namespace)
-        self._unk_index = self.vocab.get_token_index("@@UNKNOWN@@", self._target_namespace)
+        self._start_index = self.vocab.get_token_index(SOS_TOK, self._target_namespace)
+        self._end_index = self.vocab.get_token_index(EOS_TOK, self._target_namespace)
+        self._unk_index = self.vocab.get_token_index(UNK_TOK, self._target_namespace)
         num_classes = self.vocab.get_vocab_size(self._target_namespace)
 
         # Decoder output dim needs to be the same as the encoder output dim since we initialize the
@@ -72,8 +69,18 @@ class Seq2SeqDecoder(Model):
         # Used to get an initial hidden state from the encoder states
         self._sent_pooler = Pooler(project=True, d_inp=input_dim, d_proj=decoder_hidden_size)
 
-        if attention == "bilinear":
-            self._decoder_attention = BilinearAttention(decoder_hidden_size, input_dim)
+        if attention == "Bahdanau":
+            self._decoder_attention = BahdanauAttention(
+                decoder_hidden_size + target_embedding_dim, input_dim
+            )
+            # The output of attention, a weighted average over encoder outputs, will be
+            # concatenated to the input vector of the decoder at each time
+            # step.
+            self._decoder_input_dim = input_dim + target_embedding_dim
+        elif attention == "bilinear":
+            self._decoder_attention = BilinearAttention(
+                decoder_hidden_size + target_embedding_dim, input_dim
+            )
             # The output of attention, a weighted average over encoder outputs, will be
             # concatenated to the input vector of the decoder at each time
             # step.
@@ -139,10 +146,11 @@ class Seq2SeqDecoder(Model):
         encoder_outputs_mask : torch.LongTensor, [bs, T, 1]
         target_tokens : Dict[str, torch.LongTensor]
         """
-        # TODO: target_tokens is not optional.
         batch_size, _, _ = encoder_outputs.size()
 
-        if target_tokens is not None:
+        use_gold = target_tokens is not None and self.training
+
+        if use_gold:
             targets = target_tokens["words"]
             target_sequence_length = targets.size()[1]
             num_decoding_steps = target_sequence_length - 1
@@ -156,7 +164,12 @@ class Seq2SeqDecoder(Model):
         step_logits = []
 
         for timestep in range(num_decoding_steps):
-            input_choices = targets[:, timestep]
+            if use_gold:
+                input_choices = targets[:, timestep]
+            elif timestep == 0:
+                input_choices = torch.ones((batch_size,)) * self._start_index
+            else:
+                input_choices = torch.max(step_logits[-1], dim=2)[1].squeeze(1)
             decoder_input = self._prepare_decode_step_input(
                 input_choices, decoder_hidden, encoder_outputs, encoder_outputs_mask
             )
@@ -179,9 +192,15 @@ class Seq2SeqDecoder(Model):
         output_dict = {"logits": logits}
 
         if target_tokens:
+            targets = target_tokens["words"]
             target_mask = get_text_field_mask(target_tokens)
-            loss = self._get_loss(logits, targets, target_mask)
+            output_dict["target_mask"] = target_mask
+            relevant_logits = logits[:, : targets.shape[1] - 1, :].contiguous()
+            loss = self._get_loss(relevant_logits, targets, target_mask)
             output_dict["loss"] = loss
+        else:
+            # This is needed in case no gold target sequence is available.
+            output_dict["loss"] = torch.tensor([-1.0])
 
         return output_dict
 
@@ -233,8 +252,9 @@ class Seq2SeqDecoder(Model):
             encoder_outputs_mask = encoder_outputs_mask.float()
             encoder_outputs_mask = encoder_outputs_mask[:, :, 0]
             # (batch_size, input_sequence_length)
+            attention_input = torch.cat((decoder_hidden_state, embedded_input), 1)
             input_weights = self._decoder_attention(
-                decoder_hidden_state, encoder_outputs, encoder_outputs_mask
+                attention_input, encoder_outputs, encoder_outputs_mask
             )
             # (batch_size, input_dim)
             attended_input = weighted_sum(encoder_outputs, input_weights)
