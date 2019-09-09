@@ -278,21 +278,22 @@ def load_diagnostic_tsv(
     }
 
 
-def load_factuality_conll(data_file, tokenizer_name, max_seq_len=-1):
+def load_factuality_conll(tokenizer_name: str, data_file, max_seq_len=-1):
     """
     Load conll format data for factuality and do tokenization and realignment
     First, parse conll into a list of json records
     Then, call `realign_span` to for tokenization and realignment using the json records
+    :param tokenizer_name: name of the tokenizer
     :param data_file: path to data file
     :param max_seq_len: max sequence length, -1 for keeping the whole sequence
-    :return sents: tokenized sentence
+    :return tokenized_records: records with tokenized sentences and realigned spans
+    :return sents: a list of tokenized sentences
     """
     records = []
-    # TODO(njjiang) parallelize reading conll
+    sents = []
     for idx, sent in enumerate(open(data_file, encoding="utf-8").read().strip().split("\n\n")):
         record = {"text": "", "targets": [], "idx": idx}
         words = []
-        id2score = {}
         for i, line in enumerate(sent.split("\n")):
             if line.startswith("#"):
                 continue
@@ -302,12 +303,15 @@ def load_factuality_conll(data_file, tokenizer_name, max_seq_len=-1):
                 record["targets"].append({"span1": [i, i+1],
                                           "label": float(fields[2]),
                                           "span_text": fields[1], })
-                id2score[int(fields[0])] = float(fields[2])
+            # Skip the sentence if it doesn't have annotations.
+        if len(record["targets"]) == 0:
+            continue
         record["text"] = " ".join(words)
         records.append(record)
+        sents.append(record["text"])
 
     tokenized_records = list(map(lambda x: retokenize_record(x, tokenizer_name), records))
-    return tokenized_records
+    return tokenized_records, sents
 
 
 def get_tag_list(tag_vocab):

@@ -3014,22 +3014,24 @@ class BooleanQuestionTask(PairClassificationTask):
             self.example_counts[split] = len(st)
 
 
-@register_task("factbank", rel_path="FactBank")
-@register_task("meantime", rel_path="MEANTIME")
-@register_task("uw", rel_path="UW")
-@register_task("uds_ih2", rel_path="UDS_IH2")
+@register_task("factbank", rel_path="FactBank/")
+@register_task("meantime", rel_path="MEANTIME/")
+@register_task("uw", rel_path="UW/")
+@register_task("uds-ih2", rel_path="UDS_IH2/")
 class FactualityTask(Task):
-    def __init__(self, name, **kw):
+    def __init__(self, path, max_seq_len, name, **kw):
         super().__init__(name, **kw)
         self.n_classes = 1
+        self.path = path
+        self.max_seq_len = -1 # currently not supported
         self.scorer1 = Average()  # for average MSE
         self.scorer2 = Correlation("pearson")
         self.scorers = [self.scorer1, self.scorer2]
         self.val_metric = "%s_mae" % self.name
         self.val_metric_decreases = False
-        self.train: List[Dict] = []
-        self.val: List[Dict] = []
-        self.test: List[Dict] = []
+        self.train_data_text: List[Dict] = []
+        self.val_data_text: List[Dict] = []
+        self.test_data_text: List[Dict] = []
 
     @classmethod
     def _make_span_field(cls, s, text_field, offset=1):
@@ -3037,30 +3039,32 @@ class FactualityTask(Task):
 
     def load_data(self):
         """ Load data """
-        self.train = load_factuality_conll(
-            os.path.join(self.path, "train.conll"),
+        self.train_data_text, train_sents = load_factuality_conll(
             tokenizer_name=self.tokenizer_name,
+            data_file=os.path.join(self.path, "train.conll"),
             max_seq_len=self.max_seq_len,
         )
-        self.val = load_factuality_conll(
-            os.path.join(self.path, "dev.conll"),
+        self.val_data_text, dev_sents = load_factuality_conll(
             tokenizer_name=self.tokenizer_name,
+            data_file=os.path.join(self.path, "dev.conll"),
             max_seq_len=self.max_seq_len,
         )
-        self.test = load_factuality_conll(
-            os.path.join(self.path, "test.conll"),
+        self.test_data_text, _ = load_factuality_conll(
             tokenizer_name=self.tokenizer_name,
+            data_file=os.path.join(self.path, "test.conll"),
             max_seq_len=self.max_seq_len,
         )
-        self.sentences = self.train_data_text[0] + self.val_data_text[0]
-        log.info("\tFinished loading factuality data %s.".format(self.name))
 
-    def process_split(self, records, indexers, boundary_token_fn) -> Iterable[Type[Instance]]:
-        """ Process split text into a list of AllenNLP Instances. """
-        def _make_instance(record, indexers, boundary_token_fn):
+        self.sentences = train_sents + dev_sents
+        log.info(f"\tFinished loading factuality data {self.name}.")
+
+    def process_split(self, records, indexers, model_preprocessing_interface) -> Iterable[Type[Instance]]:
+        """ Process a list of json records into a list of AllenNLP Instances. """
+        def _make_instance(record):
             """Convert a single record to an AllenNLP Instance."""
-            tokens = record["text"].split()  # already space-tokenized by Moses
-            tokens = boundary_token_fn(tokens)  # apply model-appropriate variants of [cls] and [sep].
+            tokens = record["text"].split()
+            # apply model-appropriate variants of [cls] and [sep].
+            tokens = model_preprocessing_interface.boundary_token_fn(tokens)
             text_field = sentence_to_text_field(tokens, indexers)
 
             d = {}
@@ -3074,13 +3078,10 @@ class FactualityTask(Task):
 
             # a list of factuality scores for the predicates in this sentence
             labels = [t["label"] for t in record["targets"]]
-            d["labels"] = ArrayField(labels, skip_indexing=False)
+            d["labels"] = ArrayField(labels)
             return Instance(d)
-
-        def _map_fn(r):
-            return _make_instance(r, indexers, boundary_token_fn)
-
-        return map(_map_fn, records)
+        instances = map(_make_instance, records)
+        return instances
 
     def get_metrics(self, reset=False):
         mae = self.scorer1.get_metric(reset)
@@ -3091,3 +3092,6 @@ class FactualityTask(Task):
         self.scorer1(mean_absolute_error(logits, labels))  # update average MSE
         self.scorer2(logits, labels)
         return
+
+    def get_num_examples(self, split_text):
+        return len(split_text)
