@@ -35,6 +35,7 @@ from jiant.modules.sentence_encoder import SentenceEncoder
 from jiant.modules.bilm_encoder import BiLMEncoder
 from jiant.modules.bow_sentence_encoder import BoWSentEncoder
 from jiant.modules.elmo_character_encoder import ElmoCharacterEncoder
+from jiant.modules.factuality_module import FactualityModule
 from jiant.modules.onlstm_phrase_layer import ONLSTMPhraseLayer
 from jiant.modules.prpn_phrase_layer import PRPNPhraseLayer
 from jiant.modules.onlstm.ON_LSTM import ONLSTMStack
@@ -48,6 +49,7 @@ from jiant.tasks.lm_parsing import LanguageModelingParsingTask
 from jiant.tasks.qa import MultiRCTask, ReCoRDTask
 from jiant.tasks.seq2seq import Seq2SeqTask
 from jiant.tasks.tasks import (
+    FactualityTask,
     GLUEDiagnosticTask,
     MultipleChoiceTask,
     PairClassificationTask,
@@ -579,6 +581,9 @@ def build_task_specific_modules(task, model, d_sent, d_emb, vocab, embedder, arg
     elif isinstance(task, (MultiRCTask, ReCoRDTask)):
         module = build_qa_module(task, d_sent, model.project_before_pooling, task_params)
         setattr(model, "%s_mdl" % task.name, module)
+    elif isinstance(task, FactualityTask):
+        module = FactualityModule(task, d_sent, task_params)
+        setattr(model, '%s_mdl' % task.name, module)
     else:
         raise ValueError("Module not found for %s" % task.name)
 
@@ -853,6 +858,8 @@ class MultiTaskModel(nn.Module):
             out = self._multiple_choice_reading_comprehension_forward(batch, task, predict)
         elif isinstance(task, SpanClassificationTask):
             out = self._span_forward(batch, task, predict)
+        elif isinstance(task, FactualityTask):
+            out = self._factuality_forward(batch, task, predict)
         else:
             raise ValueError("Task-specific components not found!")
         return out
@@ -937,6 +944,13 @@ class MultiTaskModel(nn.Module):
         return out
 
     def _span_forward(self, batch, task, predict):
+        sent_embs, sent_mask = self.sent_encoder(batch["input1"], task)
+        module = getattr(self, "%s_mdl" % task.name)
+        out = module.forward(batch, sent_embs, sent_mask, task, predict)
+        return out
+
+    def _factuality_forward(self, batch, task, predict):
+        # TODO
         sent_embs, sent_mask = self.sent_encoder(batch["input1"], task)
         module = getattr(self, "%s_mdl" % task.name)
         out = module.forward(batch, sent_embs, sent_mask, task, predict)

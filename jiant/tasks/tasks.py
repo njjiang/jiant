@@ -3024,9 +3024,9 @@ class FactualityTask(Task):
         self.n_classes = 1
         self.path = path
         self.max_seq_len = -1 # currently not supported
-        self.scorer1 = Average()  # for average MSE
-        self.scorer2 = Correlation("pearson")
-        self.scorers = [self.scorer1, self.scorer2]
+        self.mae_scorer = Average()  # for average MSE
+        self.pearson_scorer = Correlation("pearson")
+        self.scorers = [self.mae_scorer, self.pearson_scorer]
         self.val_metric = "%s_mae" % self.name
         self.val_metric_decreases = False
         self.train_data_text: List[Dict] = []
@@ -3077,20 +3077,20 @@ class FactualityTask(Task):
             )
 
             # a list of factuality scores for the predicates in this sentence
-            labels = [t["label"] for t in record["targets"]]
+            labels = np.array([t["label"] for t in record["targets"]])
             d["labels"] = ArrayField(labels)
             return Instance(d)
         instances = map(_make_instance, records)
         return instances
 
     def get_metrics(self, reset=False):
-        mae = self.scorer1.get_metric(reset)
-        pearsonr = self.scorer2.get_metric(reset)
+        mae = self.mae_scorer.get_metric(reset)
+        pearsonr = self.pearson_scorer.get_metric(reset)
         return {"mae": mae, "pearsonr": pearsonr}
 
     def update_metrics(self, logits, labels, tagmask=None):
-        self.scorer1(mean_absolute_error(logits, labels))  # update average MSE
-        self.scorer2(logits, labels)
+        self.mae_scorer(mean_absolute_error(logits, labels))  # update average MSE
+        self.pearson_scorer(logits, labels)
         return
 
     def get_num_examples(self, split_text):

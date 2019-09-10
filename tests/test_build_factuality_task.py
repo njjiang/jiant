@@ -6,7 +6,7 @@ from pkg_resources import resource_filename
 
 from jiant.utils.config import params_from_file
 from jiant.preprocess import build_tasks
-
+from jiant.__main__ import main
 
 class TestBuildFactualityTask(unittest.TestCase):
     def setUp(self):
@@ -24,7 +24,7 @@ class TestBuildFactualityTask(unittest.TestCase):
         )  # To get other required values.
         self.params1 = params_from_file(self.DEFAULTS_PATH, self.HOCON1)
 
-    def test(self):
+    def test_build_tasks(self):
         pretrain_tasks, target_tasks, vocab, word_embs = build_tasks(self.params1)
         assert pretrain_tasks[0].name == "meantime"
         assert pretrain_tasks[1].name == "uw"
