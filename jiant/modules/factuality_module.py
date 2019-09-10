@@ -1,15 +1,14 @@
-import torch
-import torch.nn as nn
 from typing import Dict
 
+import torch
+import torch.nn as nn
 from allennlp.modules.span_extractors import SelfAttentiveSpanExtractor, EndpointSpanExtractor
 
 from jiant.modules.simple_modules import Classifier
-from jiant.tasks.tasks import Task, FactualityTask
+from jiant.tasks.tasks import Task
 
 
 class FactualityModule(nn.Module):
-
     def _make_span_extractor(self):
         if self.span_pooling == "attn":
             return SelfAttentiveSpanExtractor(self.d_inp)
@@ -27,7 +26,6 @@ class FactualityModule(nn.Module):
         clf_input_dim = self.span_extractor.get_output_dim()
         self.classifier = Classifier.from_params(clf_input_dim, task.n_classes, task_params)
         self.smoothl1loss = nn.SmoothL1Loss()
-
 
     def forward(self,
                 batch: Dict,

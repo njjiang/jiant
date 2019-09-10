@@ -1,12 +1,12 @@
-import os
 import shutil
 import tempfile
 import unittest
+
 from pkg_resources import resource_filename
 
-from jiant.utils.config import params_from_file
 from jiant.preprocess import build_tasks
-from jiant.__main__ import main
+from jiant.utils.config import params_from_file
+
 
 class TestBuildFactualityTask(unittest.TestCase):
     def setUp(self):
@@ -32,13 +32,15 @@ class TestBuildFactualityTask(unittest.TestCase):
         assert target_tasks[1].name == "uds-ih2"
         self.assertCountEqual(
             first=pretrain_tasks[0].example_counts, second={"train": 293, "val": 65, "test": 61},
-            msg= f"Unexpected number of sentences for {pretrain_tasks[0].name}: " + str(pretrain_tasks[0].example_counts))
+            msg=f"Unexpected number of sentences for {pretrain_tasks[0].name}: " + str(
+                pretrain_tasks[0].example_counts))
         self.assertCountEqual(
             first=pretrain_tasks[1].example_counts, second={'train': 2765, 'val': 992, 'test': 265},
-            msg= f"Unexpected number of sentences for {pretrain_tasks[1].name}: " + str(pretrain_tasks[1].example_counts))
+            msg=f"Unexpected number of sentences for {pretrain_tasks[1].name}: " + str(
+                pretrain_tasks[1].example_counts))
         self.assertCountEqual(
             first=target_tasks[0].example_counts, second={"train": 1899, "val": 709, "test": 197},
-            msg = f"Unexpected number of sentences for {target_tasks[0].name}: " + str(target_tasks[0].example_counts))
+            msg=f"Unexpected number of sentences for {target_tasks[0].name}: " + str(target_tasks[0].example_counts))
         self.assertCountEqual(
             first=target_tasks[1].example_counts, second={'train': 9098, 'val': 1246, 'test': 1219},
             msg=f"Unexpected number of sentences for {target_tasks[1].name}: " + str(target_tasks[1].example_counts))

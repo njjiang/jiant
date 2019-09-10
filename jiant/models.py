@@ -950,7 +950,6 @@ class MultiTaskModel(nn.Module):
         return out
 
     def _factuality_forward(self, batch, task, predict):
-        # TODO
         sent_embs, sent_mask = self.sent_encoder(batch["input1"], task)
         module = getattr(self, "%s_mdl" % task.name)
         out = module.forward(batch, sent_embs, sent_mask, task, predict)
