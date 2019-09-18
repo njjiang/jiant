@@ -10,9 +10,9 @@ import numpy as np
 import pandas as pd
 from allennlp.data import vocabulary
 
+from jiant.utils import retokenize
 from jiant.utils.tokenizers import get_tokenizer
 from jiant.utils.retokenize import realign_spans
-from probing.retokenize_edge_data import retokenize_record
 
 
 def load_span_data(tokenizer_name, file_name, label_fn=None, has_labels=True):
@@ -279,6 +279,19 @@ def load_diagnostic_tsv(
 
 
 def load_factuality_conll(tokenizer_name: str, data_file, max_seq_len=-1):
+    def retokenize_record(record, tokenizer_name):
+        """Retokenize a factuality example. Keep the original spans and texts in `orig_text` and `orig_span`"""
+        text = record["text"]
+        record["orig_text"] = text
+        aligner_fn = retokenize.get_aligner_fn(tokenizer_name)
+        ta, new_tokens = aligner_fn(text)
+        record["text"] = " ".join(new_tokens)
+        for target in record["targets"]:
+            assert "span1" in target
+            target["orig_span1"] = target["span1"].copy()
+            target["span1"] = list(map(int, ta.project_span(*target["span1"])))
+        return record
+
     """
     Load conll format data for factuality and do tokenization and realignment
     First, parse conll into a list of json records
@@ -292,7 +305,7 @@ def load_factuality_conll(tokenizer_name: str, data_file, max_seq_len=-1):
     records = []
     sents = []
     for idx, sent in enumerate(open(data_file, encoding="utf-8").read().strip().split("\n\n")):
-        record = {"text": "", "targets": [], "idx": idx}
+        record = {"text": "", "targets": [], "file_idx": idx}
         words = []
         for i, line in enumerate(sent.split("\n")):
             if line.startswith("#"):
@@ -307,6 +320,7 @@ def load_factuality_conll(tokenizer_name: str, data_file, max_seq_len=-1):
         if len(record["targets"]) == 0:
             continue
         record["text"] = " ".join(words)
+        record["idx"] = len(records)
         records.append(record)
         sents.append(record["text"])
 

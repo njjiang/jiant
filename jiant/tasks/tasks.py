@@ -3054,7 +3054,9 @@ class FactualityTask(Task):
             data_file=os.path.join(self.path, "test.conll"),
             max_seq_len=self.max_seq_len,
         )
-
+        log.info("Examples data:")
+        for i in range(3):
+            log.info(str(self.val_data_text[i]))
         self.sentences = train_sents + dev_sents
         log.info(f"\tFinished loading factuality data {self.name}.")
 
@@ -3095,3 +3097,15 @@ class FactualityTask(Task):
 
     def get_num_examples(self, split_text):
         return len(split_text)
+
+    @staticmethod
+    def merge_preds(record: Dict, preds: List) -> Dict:
+        """ Merge predictions into record, in-place.
+
+        List-valued predictions should align to targets,
+        and are attached to the corresponding target entry.
+        """
+        assert len(record["targets"]) == len(preds)
+        for target, p in zip(record["targets"], preds):
+            target["prediction"] = p
+        return record

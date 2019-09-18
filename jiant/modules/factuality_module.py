@@ -59,20 +59,35 @@ class FactualityModule(nn.Module):
                                          span_indices_mask=span_mask.long())
 
         # [batch_size, n_targets_per_sent, 1]
-        logits = self.classifier(spans_embs)
-        out["logits"] = logits
+        raw_logits = self.classifier(spans_embs)
 
         # Flatten logits and labels to have shape [n_targets_total]
-        logits = logits[span_mask].squeeze()
+        logits = raw_logits[span_mask].squeeze(dim=-1)
         labels = batch["labels"][span_mask]
         if "labels" in batch:
             out["loss"] = self.smoothl1loss(logits, labels)
-            task.update_metrics(logits.detach().numpy(), labels.detach().numpy())
+            try:
+                task.update_metrics(logits.detach().numpy(), labels.detach().numpy())
+            except TypeError: # most likely due to batch being a singleton
+                pass
 
         if predict:
-            # TODO (njjiang) follow edgeprobing for writing predictions
-            pass
-            # preds = self.get_predictions(logits)
-            # out["preds"] = list(self.unbind_predictions(preds, span_mask))
+            out["preds"] = list(self.unbind_predictions(raw_logits, span_mask))
 
         return out
+
+    def unbind_predictions(self, preds: torch.Tensor, masks: torch.Tensor):
+        """ Unpack preds to varying-length numpy arrays.
+
+        Args:
+            preds: [batch_size, num_targets, ...]
+            masks: [batch_size, num_targets] boolean mask
+
+        Yields:
+            np.ndarray for each row of preds, selected by the corresponding row
+            of span_mask.
+        """
+        preds = preds.detach().cpu()
+        masks = masks.detach().cpu()
+        for pred, mask in zip(torch.unbind(preds, dim=0), torch.unbind(masks, dim=0)):
+            yield pred[mask].squeeze(dim=-1).numpy()  # only non-masked predictions

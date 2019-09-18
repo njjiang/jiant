@@ -20,6 +20,7 @@ from jiant.tasks.tasks import (
     WiCTask,
     WinogradCoreferenceTask,
     GLUEDiagnosticTask,
+    FactualityTask,
 )
 from jiant.tasks.qa import MultiRCTask, ReCoRDTask
 from jiant.tasks.edge_probing import EdgeProbingTask
@@ -180,6 +181,8 @@ def write_preds(
             _write_copa_preds(
                 task, preds_df, pred_dir, split_name, strict_glue_format=strict_glue_format
             )
+        elif isinstance(task, FactualityTask):
+            _write_factuality_pred(task, preds_df, pred_dir, split_name)
         elif isinstance(task, MultiRCTask):
             _write_multirc_preds(
                 task, preds_df, pred_dir, split_name, strict_glue_format=strict_glue_format
@@ -297,6 +300,28 @@ def _write_edge_preds(
             fd.write(json.dumps(record))
             fd.write("\n")
 
+def _write_factuality_pred(
+        task: FactualityTask,
+        preds_df: pd.DataFrame,
+        pred_dir: str,
+        split_name: str,
+):
+    preds_file = os.path.join(pred_dir, f"{task.name}_{split_name}.json")
+    preds_df = preds_df.copy()
+    preds_df.set_index(["idx"], inplace=True)
+    # Load input data and join by row index.
+    log.info("Task '%s': joining predictions with input split '%s'", task.name, split_name)
+    records = task.get_split_text(split_name)
+    records = (
+        task.merge_preds(r, preds_df.at[r["file_idx"], "preds"]) for r in records
+    )
+    preds_df["preds"] = [a.tolist() for a in preds_df["preds"]]
+
+
+    with open(preds_file, "w") as fd:
+        for record in records:
+            fd.write(json.dumps(record))
+            fd.write("\n")
 
 def _write_wic_preds(
     task: str,
