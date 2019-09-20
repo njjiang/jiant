@@ -313,7 +313,7 @@ def _write_factuality_pred(
     log.info("Task '%s': joining predictions with input split '%s'", task.name, split_name)
     records = task.get_split_text(split_name)
     records = (
-        task.merge_preds(r, preds_df.at[r["file_idx"], "preds"]) for r in records
+        task.merge_preds(r, preds_df.at[r["idx"], "preds"]) for i, r in enumerate(records)
     )
     preds_df["preds"] = [a.tolist() for a in preds_df["preds"]]
 
