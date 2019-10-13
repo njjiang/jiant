@@ -3018,6 +3018,8 @@ class BooleanQuestionTask(PairClassificationTask):
 @register_task("meantime", rel_path="MEANTIME/")
 @register_task("uw", rel_path="UW/")
 @register_task("uds-ih2", rel_path="UDS_IH2/")
+@register_task("CB-factuality", rel_path="CB-factuality/")
+@register_task("all-factuality", rel_path="all-factuality/")
 class FactualityTask(Task):
     def __init__(self, path, max_seq_len, name, **kw):
         super().__init__(name, **kw)
