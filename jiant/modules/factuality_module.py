@@ -65,10 +65,7 @@ class FactualityModule(nn.Module):
         logits = raw_logits[span_mask].squeeze(dim=-1)
         labels = batch["labels"][span_mask]
         out["loss"] = self.smoothl1loss(logits, labels)
-        try:
-            task.update_metrics(logits.detach().numpy(), labels.detach().numpy())
-        except TypeError: # most likely due to batch being a singleton
-            pass
+        task.update_metrics(logits.detach().cpu().numpy(), labels.detach().cpu().numpy())
 
         if predict:
             out["preds"] = list(self.unbind_predictions(raw_logits, span_mask))
