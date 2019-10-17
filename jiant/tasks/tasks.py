@@ -34,7 +34,7 @@ from jiant.utils.data_loaders import (
     load_tsv,
     tokenize_and_truncate,
     load_pair_nli_jsonl,
-    load_factuality_conll,
+    load_factuality,
 )
 from jiant.utils.tokenizers import get_tokenizer
 from jiant.tasks.registry import register_task  # global task registry
@@ -3130,8 +3130,6 @@ class BooleanQuestionTask(PairClassificationTask):
 @register_task("meantime", rel_path="MEANTIME/")
 @register_task("uw", rel_path="UW/")
 @register_task("uds-ih2", rel_path="UDS_IH2/")
-@register_task("CB-factuality", rel_path="CB-factuality/")
-@register_task("all-factuality", rel_path="all-factuality/")
 class FactualityTask(Task):
     def __init__(self, path, max_seq_len, name, **kw):
         super().__init__(name, **kw)
@@ -3153,17 +3151,17 @@ class FactualityTask(Task):
 
     def load_data(self):
         """ Load data """
-        self.train_data_text, train_sents = load_factuality_conll(
+        self.train_data_text, train_sents = load_factuality(
             tokenizer_name=self.tokenizer_name,
             data_file=os.path.join(self.path, "train.conll"),
             max_seq_len=self.max_seq_len,
         )
-        self.val_data_text, dev_sents = load_factuality_conll(
+        self.val_data_text, dev_sents = load_factuality(
             tokenizer_name=self.tokenizer_name,
             data_file=os.path.join(self.path, "dev.conll"),
             max_seq_len=self.max_seq_len,
         )
-        self.test_data_text, _ = load_factuality_conll(
+        self.test_data_text, _ = load_factuality(
             tokenizer_name=self.tokenizer_name,
             data_file=os.path.join(self.path, "test.conll"),
             max_seq_len=self.max_seq_len,
@@ -3178,7 +3176,7 @@ class FactualityTask(Task):
         """ Process a list of json records into a list of AllenNLP Instances. """
         def _make_instance(record):
             """Convert a single record to an AllenNLP Instance."""
-            tokens = record["text"].split()
+            tokens = record["text"].split(" ")
             # apply model-appropriate variants of [cls] and [sep].
             tokens = model_preprocessing_interface.boundary_token_fn(tokens)
             text_field = sentence_to_text_field(tokens, indexers)
@@ -3223,6 +3221,74 @@ class FactualityTask(Task):
         for target, p in zip(record["targets"], preds):
             target["prediction"] = p
         return record
+
+@register_task("CB-factuality", rel_path="CB-factuality/")
+class FactualityTaskJSON(FactualityTask):
+    def __init__(self, path, max_seq_len, name, **kw):
+        super().__init__(path, max_seq_len, name, **kw)
+
+    def load_data(self):
+        """ Load data """
+        self.train_data_text, train_sents = load_factuality(
+            tokenizer_name=self.tokenizer_name,
+            data_file=os.path.join(self.path, "train.json"),
+            max_seq_len=self.max_seq_len,
+        )
+        self.val_data_text, dev_sents = load_factuality(
+            tokenizer_name=self.tokenizer_name,
+            data_file=os.path.join(self.path, "dev.json"),
+            max_seq_len=self.max_seq_len,
+        )
+        self.test_data_text, _ = load_factuality(
+            tokenizer_name=self.tokenizer_name,
+            data_file=os.path.join(self.path, "test.json"),
+            max_seq_len=self.max_seq_len,
+        )
+        log.info("Examples data:")
+        for i in range(3):
+            log.info(str(self.val_data_text[i]))
+        self.sentences = train_sents + dev_sents
+        log.info(f"\tFinished loading factuality data {self.name}.")
+
+@register_task("all-factuality", rel_path="")
+class AllFactualityTask(FactualityTask):
+    def __init__(self, path, max_seq_len, name, **kw):
+        super().__init__(path, max_seq_len, name, **kw)
+
+    def load_data(self):
+        """ Load data """
+        self.train_data_text, train_sents = [], []
+        self.val_data_text, val_sents = [], []
+        self.test_data_text  = []
+        for task in ["FactBank", "UW", "MEANTIME", "UDS_IH2", "CB-factuality"]:
+            ftype = "json" if task.startswith("CB") else "conll"
+            tr_text, tr_sents = load_factuality(
+                tokenizer_name=self.tokenizer_name,
+                data_file=os.path.join(self.path, task, f"train.{ftype}"),
+                max_seq_len=self.max_seq_len,
+            )
+            self.train_data_text += tr_text
+            train_sents += tr_sents
+            v_text, v_sents = load_factuality(
+                tokenizer_name=self.tokenizer_name,
+                data_file=os.path.join(self.path, task, f"dev.{ftype}"),
+                max_seq_len=self.max_seq_len,
+            )
+            self.val_data_text += v_text
+            val_sents += v_sents
+            te_text, _ = load_factuality(
+                tokenizer_name=self.tokenizer_name,
+                data_file=os.path.join(self.path, task, f"test.{ftype}"),
+                max_seq_len=self.max_seq_len,
+            )
+            self.test_data_text += te_text
+
+        log.info("Examples data:")
+        for i in range(3):
+            log.info(str(self.val_data_text[i]))
+        self.sentences = train_sents + val_sents
+        log.info(f"\tFinished loading factuality data {self.name}.")
+
 
 @register_task("anli", rel_path="aNLI")
 class AlphaNLITask(MultipleChoiceTask):

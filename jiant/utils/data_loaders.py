@@ -277,8 +277,7 @@ def load_diagnostic_tsv(
         "ix_to_knowledge_dic": ix_to_knowledge_dic,
     }
 
-
-def load_factuality_conll(tokenizer_name: str, data_file, max_seq_len=-1):
+def load_factuality(tokenizer_name: str, data_file, max_seq_len=-1):
     def retokenize_record(record, tokenizer_name):
         """Retokenize a factuality example. Keep the original spans and texts in `orig_text` and `orig_span`"""
         text = record["text"]
@@ -304,6 +303,14 @@ def load_factuality_conll(tokenizer_name: str, data_file, max_seq_len=-1):
     """
     records = []
     sents = []
+    if data_file.endswith("json"):
+        for sent in open(data_file, encoding="utf-8").read().strip().split("\n"):
+            r = json.loads(sent)
+            sents.append(r["text"])
+            records.append(r)
+        return records, sents
+
+    # read conll
     for idx, sent in enumerate(open(data_file, encoding="utf-8").read().strip().split("\n\n")):
         record = {"text": "", "targets": [], "file_idx": idx}
         words = []
