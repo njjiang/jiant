@@ -3130,16 +3130,19 @@ class BooleanQuestionTask(PairClassificationTask):
 @register_task("meantime", rel_path="MEANTIME/")
 @register_task("uw", rel_path="UW/")
 @register_task("uds-ih2", rel_path="UDS_IH2/")
+@register_task("CB-factuality", rel_path="CB-factuality/")
+@register_task("all-factuality", rel_path="all-factuality")
+@register_task("all_but_cb", rel_path="all_but_cb")
 class FactualityTask(Task):
     def __init__(self, path, max_seq_len, name, **kw):
         super().__init__(name, **kw)
         self.n_classes = 1
         self.path = path
         self.max_seq_len = -1 # currently not supported
-        self.mae_scorer = Average()  # for average MSE
+        self.mae_scorer = Average()  # for average MAE
         self.pearson_scorer = Correlation("pearson")
         self.scorers = [self.mae_scorer, self.pearson_scorer]
-        self.val_metric = "%s_mae" % self.name
+        self.val_metric = "%s_pearson-mae" % self.name
         self.val_metric_decreases = False
         self.train_data_text: List[Dict] = []
         self.val_data_text: List[Dict] = []
@@ -3153,17 +3156,17 @@ class FactualityTask(Task):
         """ Load data """
         self.train_data_text, train_sents = load_factuality(
             tokenizer_name=self.tokenizer_name,
-            data_file=os.path.join(self.path, "train.conll"),
+            data_file=os.path.join(self.path, "train.json"),
             max_seq_len=self.max_seq_len,
         )
         self.val_data_text, dev_sents = load_factuality(
             tokenizer_name=self.tokenizer_name,
-            data_file=os.path.join(self.path, "dev.conll"),
+            data_file=os.path.join(self.path, "dev.json"),
             max_seq_len=self.max_seq_len,
         )
         self.test_data_text, _ = load_factuality(
             tokenizer_name=self.tokenizer_name,
-            data_file=os.path.join(self.path, "test.conll"),
+            data_file=os.path.join(self.path, "test.json"),
             max_seq_len=self.max_seq_len,
         )
         log.info("Examples data:")
@@ -3200,9 +3203,11 @@ class FactualityTask(Task):
     def get_metrics(self, reset=False):
         mae = self.mae_scorer.get_metric(reset)
         pearsonr = self.pearson_scorer.get_metric(reset)
-        return {"mae": mae, "pearsonr": pearsonr}
+        return {"mae": mae, "pearsonr": pearsonr, "pearson-mae": pearsonr-mae}
 
     def update_metrics(self, logits, labels, tagmask=None):
+        # for aggregating two metrics together.
+        # so that we are maximizing both pearson R and 1-MAE
         self.mae_scorer(mean_absolute_error(logits, labels))  # update average MSE
         self.pearson_scorer(logits, labels)
         return
@@ -3217,15 +3222,15 @@ class FactualityTask(Task):
         List-valued predictions should align to targets,
         and are attached to the corresponding target entry.
         """
-        assert len(record["targets"]) == len(preds)
+        assert len(record["targets"]) == len(preds), f"unequal targets, {len(preds)} in  {record}"
         for target, p in zip(record["targets"], preds):
             target["prediction"] = p
         return record
 
-@register_task("CB-factuality", rel_path="CB-factuality/")
 class FactualityTaskJSON(FactualityTask):
     def __init__(self, path, max_seq_len, name, **kw):
         super().__init__(path, max_seq_len, name, **kw)
+        self.val_metric = "%s_pearson" % self.name
 
     def load_data(self):
         """ Load data """
@@ -3250,10 +3255,11 @@ class FactualityTaskJSON(FactualityTask):
         self.sentences = train_sents + dev_sents
         log.info(f"\tFinished loading factuality data {self.name}.")
 
-@register_task("all-factuality", rel_path="")
 class AllFactualityTask(FactualityTask):
     def __init__(self, path, max_seq_len, name, **kw):
         super().__init__(path, max_seq_len, name, **kw)
+        self.val_metric = "%s_pearsonr" % self.name
+
 
     def load_data(self):
         """ Load data """
@@ -3261,7 +3267,6 @@ class AllFactualityTask(FactualityTask):
         self.val_data_text, val_sents = [], []
         self.test_data_text  = []
         for task in ["FactBank", "UW", "MEANTIME", "UDS_IH2", "CB-factuality"]:
-            ftype = "json" if task.startswith("CB") else "conll"
             tr_text, tr_sents = load_factuality(
                 tokenizer_name=self.tokenizer_name,
                 data_file=os.path.join(self.path, task, f"train.{ftype}"),
