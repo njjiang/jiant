@@ -915,6 +915,13 @@ class QQPTask(PairClassificationTask):
 
     def load_data(self):
         """Process the dataset located at data_file."""
+
+        def label_fn(x):
+            if x == "":
+                return 0
+            else:
+                return int(x)
+
         self.train_data_text = load_tsv(
             self._tokenizer_name,
             os.path.join(self.path, "train.tsv"),
@@ -922,7 +929,7 @@ class QQPTask(PairClassificationTask):
             s1_idx=3,
             s2_idx=4,
             label_idx=5,
-            label_fn=int,
+            label_fn=label_fn,
             skip_rows=1,
         )
         self.val_data_text = load_tsv(
@@ -932,7 +939,7 @@ class QQPTask(PairClassificationTask):
             s1_idx=3,
             s2_idx=4,
             label_idx=5,
-            label_fn=int,
+            label_fn=label_fn,
             skip_rows=1,
         )
         self.test_data_text = load_tsv(
@@ -2344,9 +2351,11 @@ class CCGTaggingTask(TaggingTask):
         self.path = path
         super().__init__(name, 1363, **kw)
         self.INTRODUCED_TOKEN = "1363"
-        self.bert_tokenization = self._tokenizer_name.startswith("bert-")
+        from jiant.pytorch_transformers_interface import input_module_uses_pytorch_transformers
+
+        self.subword_tokenization = input_module_uses_pytorch_transformers(self._tokenizer_name)
         self.max_seq_len = max_seq_len
-        if self._tokenizer_name.startswith("bert-"):
+        if self.subword_tokenization:
             # the +1 is for the tokenization added token
             self.num_tags = self.num_tags + 1
 
@@ -2358,7 +2367,10 @@ class CCGTaggingTask(TaggingTask):
         self, split, indexers, model_preprocessing_interface
     ) -> Iterable[Type[Instance]]:
         """ Process a tagging task """
-        inputs = [TextField(list(map(Token, sent)), token_indexers=indexers) for sent in split[0]]
+        inputs = [
+            sentence_to_text_field(model_preprocessing_interface.boundary_token_fn(sent), indexers)
+            for sent in split[0]
+        ]
         targs = [
             TextField(list(map(Token, sent)), token_indexers=self.target_indexer)
             for sent in split[2]
@@ -2413,7 +2425,7 @@ class CCGTaggingTask(TaggingTask):
         # experiment
         # [BERT: Pretraining of Deep Bidirectional Transformers for Language Understanding]
         # (https://arxiv.org/abs/1810.04805)
-        if self.bert_tokenization:
+        if self.subword_tokenization:
             import numpy.ma as ma
 
             masks = []
