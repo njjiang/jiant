@@ -491,6 +491,43 @@ class SSTTask(SingleClassificationTask):
         self.sentences = self.train_data_text[0] + self.val_data_text[0]
         log.info("\tFinished loading SST data.")
 
+@register_task("osu-break-it", rel_path="osu-break-it/")
+class OSUBreakItTask(SSTTask):
+    """ Task class for OSU break it test data.  """
+
+    def __init__(self, path, max_seq_len, name, **kw):
+        super().__init__(path, max_seq_len, name, **kw)
+        self.path = path
+        self.max_seq_len = max_seq_len
+        self.eval_only_task = True
+
+    def load_data(self):
+        """ Load data """
+        self.val_data_text = load_tsv(
+            self._tokenizer_name,
+            os.path.join(self.path, "orig_sents.tsv"),
+            max_seq_len=self.max_seq_len,
+            s1_idx=1,
+            s2_idx=None,
+            label_idx=2,
+            return_indices=True,
+            skip_rows=1,
+        )
+        self.test_data_text = load_tsv(
+            self._tokenizer_name,
+            os.path.join(self.path, "paired_sents.tsv"),
+            max_seq_len=self.max_seq_len,
+            s1_idx=1,
+            s2_idx=None,
+            label_idx=2,
+            return_indices=True,
+            skip_rows=1,
+        )
+        # dummy splits to make the code work
+        self.train_data_text = self.val_data_text
+        self.sentences = self.train_data_text[0] + self.val_data_text[0]
+        log.info("\tFinished loading OSU-break-it data.")
+
 
 @register_task("npi_adv_li", rel_path="NPI/probing/adverbs/licensor")
 @register_task("npi_adv_sc", rel_path="NPI/probing/adverbs/scope_with_licensor")
@@ -592,6 +629,65 @@ class CoLANPITask(SingleClassificationTask):
         )
         self.sentences = self.train_data_text[0] + self.val_data_text[0]
         log.info("\tFinished loading NPI Data.")
+
+    def get_metrics(self, reset=False):
+        return {"mcc": self.scorer1.get_metric(reset), "accuracy": self.scorer2.get_metric(reset)}
+
+    def update_metrics(self, logits, labels, tagmask=None):
+        logits, labels = logits.detach(), labels.detach()
+        _, preds = logits.max(dim=1)
+        self.scorer1(preds, labels)
+        self.scorer2(logits, labels)
+        return
+
+@register_task("cb-factive", rel_path="edges_1031/cb_factive/")
+class CBFactiveTask(SingleClassificationTask):
+    def __init__(self, path, max_seq_len, name, **kw):
+        super(CBFactiveTask, self).__init__(name, n_classes=2, **kw)
+        self.path = path
+        self.max_seq_len = max_seq_len
+
+        self.train_data_text = None
+        self.val_data_text = None
+        self.test_data_text = None
+
+        self.val_metric = "%s_mcc" % self.name
+        self.val_metric_decreases = False
+        self.scorer1 = Correlation("matthews")
+        self.scorer2 = CategoricalAccuracy()
+        self.scorers = [self.scorer1, self.scorer2]
+
+
+    def load_data(self):
+        """Process the dataset located at each data file.
+           The target needs to be split into tokens because
+           it is a sequence (one tag per input token). """
+        targ_map = {"yes": 1, "no": 0}
+
+        def _load_data(data_file):
+            data = [json.loads(l) for l in open(data_file, encoding="utf-8").readlines()]
+            sent1s, sent2s, targs, idxs = [], [], [], []
+            for example in data:
+                sent1s.append(
+                    tokenize_and_truncate(
+                        self._tokenizer_name, example["premise"], self.max_seq_len
+                    )
+                )
+                trg = targ_map[example["label"]] if "label" in example else 0
+                targs.append(trg)
+                idxs.append(example["idx"])
+            assert len(sent1s) == len(targs) == len(idxs), "Error processing CB data"
+            return [sent1s, sent2s, targs, idxs]
+
+        self.train_data_text = _load_data(os.path.join(self.path, "train.json"))
+        self.val_data_text = _load_data(os.path.join(self.path, "dev.json"))
+        self.test_data_text = _load_data(os.path.join(self.path, "test.json"))
+        self.sentences = (
+            self.train_data_text[0]
+            + self.val_data_text[0]
+        )
+
+        log.info("\tFinished loading CommitmentBank factive data.")
 
     def get_metrics(self, reset=False):
         return {"mcc": self.scorer1.get_metric(reset), "accuracy": self.scorer2.get_metric(reset)}
@@ -3220,6 +3316,7 @@ class BooleanQuestionTask(PairClassificationTask):
 @register_task("CB-factuality", rel_path="CB-factuality/")
 @register_task("all-factuality", rel_path="all-factuality")
 @register_task("all_but_cb", rel_path="all_but_cb")
+@register_task("beaver", rel_path="beaver/")
 class FactualityTask(Task):
     def __init__(self, path, max_seq_len, name, **kw):
         super().__init__(name, **kw)
@@ -3313,73 +3410,6 @@ class FactualityTask(Task):
         for target, p in zip(record["targets"], preds):
             target["prediction"] = p
         return record
-
-class FactualityTaskJSON(FactualityTask):
-    def __init__(self, path, max_seq_len, name, **kw):
-        super().__init__(path, max_seq_len, name, **kw)
-        self.val_metric = "%s_pearson" % self.name
-
-    def load_data(self):
-        """ Load data """
-        self.train_data_text, train_sents = load_factuality(
-            tokenizer_name=self.tokenizer_name,
-            data_file=os.path.join(self.path, "train.json"),
-            max_seq_len=self.max_seq_len,
-        )
-        self.val_data_text, dev_sents = load_factuality(
-            tokenizer_name=self.tokenizer_name,
-            data_file=os.path.join(self.path, "dev.json"),
-            max_seq_len=self.max_seq_len,
-        )
-        self.test_data_text, _ = load_factuality(
-            tokenizer_name=self.tokenizer_name,
-            data_file=os.path.join(self.path, "test.json"),
-            max_seq_len=self.max_seq_len,
-        )
-        log.info("Examples data:")
-        for i in range(3):
-            log.info(str(self.val_data_text[i]))
-        self.sentences = train_sents + dev_sents
-        log.info(f"\tFinished loading factuality data {self.name}.")
-
-class AllFactualityTask(FactualityTask):
-    def __init__(self, path, max_seq_len, name, **kw):
-        super().__init__(path, max_seq_len, name, **kw)
-        self.val_metric = "%s_pearsonr" % self.name
-
-
-    def load_data(self):
-        """ Load data """
-        self.train_data_text, train_sents = [], []
-        self.val_data_text, val_sents = [], []
-        self.test_data_text  = []
-        for task in ["FactBank", "UW", "MEANTIME", "UDS_IH2", "CB-factuality"]:
-            tr_text, tr_sents = load_factuality(
-                tokenizer_name=self.tokenizer_name,
-                data_file=os.path.join(self.path, task, f"train.{ftype}"),
-                max_seq_len=self.max_seq_len,
-            )
-            self.train_data_text += tr_text
-            train_sents += tr_sents
-            v_text, v_sents = load_factuality(
-                tokenizer_name=self.tokenizer_name,
-                data_file=os.path.join(self.path, task, f"dev.{ftype}"),
-                max_seq_len=self.max_seq_len,
-            )
-            self.val_data_text += v_text
-            val_sents += v_sents
-            te_text, _ = load_factuality(
-                tokenizer_name=self.tokenizer_name,
-                data_file=os.path.join(self.path, task, f"test.{ftype}"),
-                max_seq_len=self.max_seq_len,
-            )
-            self.test_data_text += te_text
-
-        log.info("Examples data:")
-        for i in range(3):
-            log.info(str(self.val_data_text[i]))
-        self.sentences = train_sents + val_sents
-        log.info(f"\tFinished loading factuality data {self.name}.")
 
 
 @register_task("anli", rel_path="aNLI")
