@@ -173,6 +173,7 @@ def write_preds(
             + tasks_module.ALL_GLUE_TASKS
             + ["wmt"]
             + tasks_module.ALL_COLA_NPI_TASKS
+            + ["osu-break-it", "osu-A", "osu-B", "osu-C", "osu-D", "osu-E"]
         )
 
         if task.name in glue_style_tasks:
