@@ -492,6 +492,11 @@ class SSTTask(SingleClassificationTask):
         log.info("\tFinished loading SST data.")
 
 @register_task("osu-break-it", rel_path="osu-break-it/")
+@register_task("osu-A", rel_path="osu-A/")
+@register_task("osu-B", rel_path="osu-B/")
+@register_task("osu-C", rel_path="osu-C/")
+@register_task("osu-D", rel_path="osu-D/")
+@register_task("osu-E", rel_path="osu-E/")
 class OSUBreakItTask(SSTTask):
     """ Task class for OSU break it test data.  """
 
@@ -2605,6 +2610,16 @@ class SpanClassificationTask(Task):
 
 
 @register_task("commitbank", rel_path="CB/")
+@register_task("commitbank-0", rel_path="CB-split0/")
+@register_task("commitbank-1", rel_path="CB-split1/")
+@register_task("commitbank-2", rel_path="CB-split2/")
+@register_task("commitbank-3", rel_path="CB-split3/")
+@register_task("commitbank-4", rel_path="CB-split4/")
+@register_task("commitbank-5", rel_path="CB-split5/")
+@register_task("commitbank-6", rel_path="CB-split6/")
+@register_task("commitbank-7", rel_path="CB-split7/")
+@register_task("commitbank-8", rel_path="CB-split8/")
+@register_task("commitbank-9", rel_path="CB-split9/")
 class CommitmentTask(PairClassificationTask):
     """ NLI-formatted task detecting speaker commitment.
     Data and more info at github.com/mcdm/CommitmentBank/
@@ -3326,6 +3341,8 @@ class BooleanQuestionTask(PairClassificationTask):
 @register_task("uw", rel_path="UW/")
 @register_task("uds-ih2", rel_path="UDS_IH2/")
 @register_task("CB-factuality", rel_path="CB-factuality/")
+@register_task("CB-factuality_idk", rel_path="CB-factuality_idk/")
+@register_task("CB-factuality_you-know", rel_path="CB-factuality_you-know/")
 @register_task("all-factuality", rel_path="all-factuality")
 @register_task("all_but_cb", rel_path="all_but_cb")
 @register_task("beaver", rel_path="beaver/")
