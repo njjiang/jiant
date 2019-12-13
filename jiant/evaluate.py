@@ -75,6 +75,7 @@ def evaluate(
         "qst_idx",
         "ans_idx",
         "ans_str",
+        "uID", # for CB crossval splits
     ]
     # Enforce that these tasks have the 'idx' field set.
     IDX_REQUIRED_TASK_NAMES = (
