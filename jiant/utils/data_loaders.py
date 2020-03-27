@@ -303,36 +303,41 @@ def load_factuality(tokenizer_name: str, data_file, max_seq_len=-1):
     """
     records = []
     sents = []
-    if data_file.endswith("json"):
+    if data_file.endswith("jsonl"):
         for sent in open(data_file, encoding="utf-8").read().strip().split("\n"):
             r = json.loads(sent)
             sents.append(r["text"])
             records.append(r)
-        return records, sents
+
+        tokenized_records = list(map(lambda x: retokenize_record(x, tokenizer_name), records))
+        return tokenized_records, sents
 
     # read conll
-    for idx, sent in enumerate(open(data_file, encoding="utf-8").read().strip().split("\n\n")):
-        record = {"text": "", "targets": [], "file_idx": idx}
-        words = []
-        for i, line in enumerate(sent.split("\n")):
-            if line.startswith("#"):
+    elif data_file.endswith("conll"):
+        for idx, sent in enumerate(open(data_file, encoding="utf-8").read().strip().split("\n\n")):
+            record = {"text": "", "targets": [], "file_idx": idx}
+            words = []
+            for i, line in enumerate(sent.split("\n")):
+                if line.startswith("#"):
+                    continue
+                fields = line.split("\t")
+                words.append(fields[1])
+                if fields[2] != "_":
+                    record["targets"].append({"span1": [i, i+1],
+                                              "label": float(fields[2]),
+                                              "span_text": fields[1], })
+                # Skip the sentence if it doesn't have annotations.
+            if len(record["targets"]) == 0:
                 continue
-            fields = line.split("\t")
-            words.append(fields[1])
-            if fields[2] != "_":
-                record["targets"].append({"span1": [i, i+1],
-                                          "label": float(fields[2]),
-                                          "span_text": fields[1], })
-            # Skip the sentence if it doesn't have annotations.
-        if len(record["targets"]) == 0:
-            continue
-        record["text"] = " ".join(words)
-        record["idx"] = len(records)
-        records.append(record)
-        sents.append(record["text"])
+            record["text"] = " ".join(words)
+            record["idx"] = len(records)
+            records.append(record)
+            sents.append(record["text"])
 
-    tokenized_records = list(map(lambda x: retokenize_record(x, tokenizer_name), records))
-    return tokenized_records, sents
+        tokenized_records = list(map(lambda x: retokenize_record(x, tokenizer_name), records))
+        return tokenized_records, sents
+    else:
+        log.info("Unrecognized factuality file " + data_file)
 
 
 def get_tag_list(tag_vocab):

@@ -413,6 +413,8 @@ def _write_commitment_preds(
                 out_d = {"idx": row["idx"], "label": pred_map[row["preds"]]}
             else:
                 out_d = row.to_dict()
+                out_d["preds"] = pred_map[out_d["preds"]]
+                out_d["labels"] = pred_map[out_d["labels"]]
             preds_fh.write("{0}\n".format(json.dumps(out_d)))
 
 

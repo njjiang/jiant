@@ -3340,7 +3340,41 @@ class BooleanQuestionTask(PairClassificationTask):
 @register_task("meantime", rel_path="MEANTIME/")
 @register_task("uw", rel_path="UW/")
 @register_task("uds-ih2", rel_path="UDS_IH2/")
-@register_task("CB-factuality", rel_path="CB-factuality/")
+@register_task("CB-factuality", rel_path="CB-factuality-sets/CB-factuality")
+@register_task("CB-factuality-split0", rel_path="CB-factuality-sets/CB-factuality-split0")
+@register_task("CB-factuality-split1", rel_path="CB-factuality-sets/CB-factuality-split1")
+@register_task("CB-factuality-split2", rel_path="CB-factuality-sets/CB-factuality-split2")
+@register_task("CB-factuality-split3", rel_path="CB-factuality-sets/CB-factuality-split3")
+@register_task("CB-factuality-split4", rel_path="CB-factuality-sets/CB-factuality-split4")
+@register_task("CB-factuality-split5", rel_path="CB-factuality-sets/CB-factuality-split5")
+@register_task("CB-factuality-split6", rel_path="CB-factuality-sets/CB-factuality-split6")
+@register_task("CB-factuality-split7", rel_path="CB-factuality-sets/CB-factuality-split7")
+@register_task("CB-factuality-split8", rel_path="CB-factuality-sets/CB-factuality-split8")
+@register_task("CB-factuality-split9", rel_path="CB-factuality-sets/CB-factuality-split9")
+@register_task("CB-NoEnv", rel_path="CB-factuality-sets/CB-NoEnv")
+@register_task("CB-NoEnv-split0", rel_path="CB-factuality-sets/CB-NoEnv-split0")
+@register_task("CB-NoEnv-split1", rel_path="CB-factuality-sets/CB-NoEnv-split1")
+@register_task("CB-NoEnv-split2", rel_path="CB-factuality-sets/CB-NoEnv-split2")
+@register_task("CB-NoEnv-split3", rel_path="CB-factuality-sets/CB-NoEnv-split3")
+@register_task("CB-NoEnv-split4", rel_path="CB-factuality-sets/CB-NoEnv-split4")
+@register_task("CB-NoEnv-split5", rel_path="CB-factuality-sets/CB-NoEnv-split5")
+@register_task("CB-NoEnv-split6", rel_path="CB-factuality-sets/CB-NoEnv-split6")
+@register_task("CB-NoEnv-split7", rel_path="CB-factuality-sets/CB-NoEnv-split7")
+@register_task("CB-NoEnv-split8", rel_path="CB-factuality-sets/CB-NoEnv-split8")
+@register_task("CB-NoEnv-split9", rel_path="CB-factuality-sets/CB-NoEnv-split9")
+@register_task("rp-random", rel_path="RP/rp-random")
+@register_task("rp-test-pos", rel_path="RP/rp-test-pos")
+@register_task("rp-test-neg", rel_path="RP/rp-test-neg")
+@register_task("rp-random-split0", rel_path="RP/rp-random-split0")
+@register_task("rp-random-split1", rel_path="RP/rp-random-split1")
+@register_task("rp-random-split2", rel_path="RP/rp-random-split2")
+@register_task("rp-random-split3", rel_path="RP/rp-random-split3")
+@register_task("rp-random-split4", rel_path="RP/rp-random-split4")
+@register_task("rp-random-split5", rel_path="RP/rp-random-split5")
+@register_task("rp-random-split6", rel_path="RP/rp-random-split6")
+@register_task("rp-random-split7", rel_path="RP/rp-random-split7")
+@register_task("rp-random-split8", rel_path="RP/rp-random-split8")
+@register_task("rp-random-split9", rel_path="RP/rp-random-split9")
 @register_task("CB-factuality_idk", rel_path="CB-factuality_idk/")
 @register_task("CB-factuality_you-know", rel_path="CB-factuality_you-know/")
 @register_task("all-factuality", rel_path="all-factuality")
@@ -3369,17 +3403,17 @@ class FactualityTask(Task):
         """ Load data """
         self.train_data_text, train_sents = load_factuality(
             tokenizer_name=self.tokenizer_name,
-            data_file=os.path.join(self.path, "train.json"),
+            data_file=os.path.join(self.path, "train.jsonl"),
             max_seq_len=self.max_seq_len,
         )
         self.val_data_text, dev_sents = load_factuality(
             tokenizer_name=self.tokenizer_name,
-            data_file=os.path.join(self.path, "dev.json"),
+            data_file=os.path.join(self.path, "dev.jsonl"),
             max_seq_len=self.max_seq_len,
         )
         self.test_data_text, _ = load_factuality(
             tokenizer_name=self.tokenizer_name,
-            data_file=os.path.join(self.path, "test.json"),
+            data_file=os.path.join(self.path, "test.jsonl"),
             max_seq_len=self.max_seq_len,
         )
         log.info("Examples data:")
