@@ -28,7 +28,7 @@ OVERRIDES+=", random_seed=81"
 python main.py -c jiant/config/defaults.conf -o "${OVERRIDES}"
 
 # eval on all tasks
-OVERRIDES+=", target_tasks = \"factbank,meantime,uw,uds-ih2,CB-factuality,CB-NoEnv,rp-random\""
+OVERRIDES+=", target_tasks = \"factbank,meantime,uw,uds-ih2,CB,CB2,rp\""
 
 OVERRIDES+=", do_pretrain = 0"
 OVERRIDES+=", use_classifier = ${TASK}"
