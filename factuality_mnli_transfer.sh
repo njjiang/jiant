@@ -25,7 +25,7 @@ OVERRIDES+=", reload_tasks=1, reload_indexing=1, reload_vocab=1, reindex_tasks=$
 OVERRIDES+=", load_target_train_checkpoint = ${MNLI_CHECKPOINT}"
 OVERRIDES+=", random_seed=81"
 
-#python main.py -c jiant/config/defaults.conf -o "${OVERRIDES}"
+python main.py -c jiant/config/defaults.conf -o "${OVERRIDES}"
 
 # eval on all tasks
 OVERRIDES+=", target_tasks = \"factbank,meantime,uw,uds-ih2,CB-factuality,CB-NoEnv,rp-random\""

@@ -1,23 +1,21 @@
 set -e
-TASK=${1:-"rp-random"}  # probing task name(s)
+TASK=${1:-"rp-random"}  
 
-OVERRIDES="exp_name = 1115_single_task_factuality"
+OVERRIDES="exp_name = EXP_single_task_factuality"
 OVERRIDES+=", run_name = single-${TASK}"
 OVERRIDES+=", pretrain_tasks = ${TASK}"
 OVERRIDES+=", target_tasks = ${TASK}"
-OVERRIDES+=", do_pretrain = 1"
-OVERRIDES+=", do_target_task_training = 0"
+OVERRIDES+=", do_pretrain = 0"
+OVERRIDES+=", do_target_task_training = 1"
 OVERRIDES+=", cuda = 0"
 OVERRIDES+=", batch_size = 4"
-OVERRIDES+=", val_interval = 60"
 OVERRIDES+=", write_preds = \"val,test\""
 OVERRIDES+=", sent_enc = none, sep_embs_for_skip = 1, transfer_paradigm = finetune" 
 OVERRIDES+=", lr = .00001, min_lr = .0000001, lr_patience = 4, dropout=0.1, patience=5, max_epochs = 20"
 ##
 OVERRIDES+=", input_module=bert-large-cased"
-#OVERRIDES+=", input_module=roberta-large"
 
-#python main.py -c jiant/config/defaults.conf -o "${OVERRIDES}"
+python main.py -c jiant/config/defaults.conf -o "${OVERRIDES}"
 
 OVERRIDES+=", target_tasks = \"factbank,meantime,uw,uds-ih2,CB-factuality,CB-NoEnv,rp-random\""
 OVERRIDES+=", use_classifier = ${TASK}"
