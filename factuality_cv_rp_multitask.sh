@@ -1,11 +1,11 @@
 set -e
-task="rp-random"
+task="rp"
 split=${1:-"0"}
 TASK="${task}-split${split}"
 
 OVERRIDES="exp_name = EXP_multi_task_factuality"
 OVERRIDES+=", run_name = \"$TASK\""
-OVERRIDES+=", pretrain_tasks = \"factbank,meantime,uw,uds-ih2,CB-factuality,CB-NoEnv,$TASK\""
+OVERRIDES+=", pretrain_tasks = \"factbank,meantime,uw,uds-ih2,CB,CB2,$TASK\""
 OVERRIDES+=", target_tasks = \"${TASK}\""
 OVERRIDES+=", cuda = auto"
 OVERRIDES+=", batch_size = 4"

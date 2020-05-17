@@ -1,5 +1,5 @@
 set -e
-TASK=${1:-"rp-random"}  
+TASK=${1:-"rp"}
 
 OVERRIDES="exp_name = EXP_single_task_factuality"
 OVERRIDES+=", run_name = single-${TASK}"
@@ -17,7 +17,7 @@ OVERRIDES+=", input_module=bert-large-cased"
 
 python main.py -c jiant/config/defaults.conf -o "${OVERRIDES}"
 
-OVERRIDES+=", target_tasks = \"factbank,meantime,uw,uds-ih2,CB-factuality,CB-NoEnv,rp-random\""
+OVERRIDES+=", target_tasks = \"factbank,meantime,uw,uds-ih2,CB,CB2,rp\""
 OVERRIDES+=", use_classifier = ${TASK}"
 OVERRIDES+=", do_pretrain = 0"
 OVERRIDES+=", do_target_task_training = 0"

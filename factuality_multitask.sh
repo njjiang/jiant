@@ -2,8 +2,10 @@ set -e
 
 OVERRIDES="exp_name = EXP_multi_task_factuality"
 OVERRIDES+=", run_name = \"3282020\""
-OVERRIDES+=", pretrain_tasks = \"factbank,meantime,uw,uds-ih2,CB-factuality,CB-NoEnv,rp-random\""
-OVERRIDES+=", target_tasks = \"factbank,meantime,uw,uds-ih2,CB-factuality,CB-NoEnv,rp-random\""
+OVERRIDES+=", pretrain_tasks = \"CB,CB2,rp\""
+OVERRIDES+=", target_tasks = \"CB,CB2,rp\""
+#OVERRIDES+=", pretrain_tasks = \"factbank,meantime,uw,uds-ih2,CB,CB2,rp\""
+#OVERRIDES+=", target_tasks = \"factbank,meantime,uw,uds-ih2,CB,CB2,rp\""
 OVERRIDES+=", do_pretrain = 1"
 OVERRIDES+=", do_target_task_training = 0"
 OVERRIDES+=", do_full_eval = 1"
