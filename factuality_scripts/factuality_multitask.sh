@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <<<<<<< HEAD:factuality_scripts/factuality_multitask.sh
 #!/bin/bash
 # Run multi-task factuality model
@@ -6,6 +7,11 @@
 # Run multi-task factuality model
 # Usage: ./factuality_multitask.sh
 >>>>>>> 2f8d37d... document scripts:factuality_scripts/factuality_multitask.sh
+=======
+#!/bin/bash
+# Run multi-task factuality model
+# Usage: ./factuality_scripts/factuality_multitask.sh
+>>>>>>> 6de312e... add scripts and data
 set -e
 OVERRIDES="exp_name = EXP_multi_task_factuality"
 OVERRIDES+=", run_name = \"3282020\""
