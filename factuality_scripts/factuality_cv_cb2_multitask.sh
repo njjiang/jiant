@@ -1,3 +1,6 @@
+# Train multi-task models on random splits of CB2 dataset
+# Usage: for i in `seq 0 9`; do ./factuality_cv_cb2_multitask.sh $i; done
+
 set -e
 task="CB2"
 split=${1:-"0"}

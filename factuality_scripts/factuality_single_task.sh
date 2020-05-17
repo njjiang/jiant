@@ -1,5 +1,7 @@
 set -e
 TASK=${1:-"rp"}
+# Run single task models on a dataset
+# Usage: ./factuality_single_task CB2
 
 OVERRIDES="exp_name = EXP_single_task_factuality"
 OVERRIDES+=", run_name = single-${TASK}"
