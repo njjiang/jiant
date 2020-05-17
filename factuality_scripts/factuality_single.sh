@@ -1,7 +1,10 @@
+#!/bin/bash
+# Run single task models on a dataset
+# Usage: ./factuality_single_task.sh CB2
+# To run the Shared model, do: ./factuality_scripts/factuality_single_task.sh all-factuality
+
 set -e
 TASK=${1:-"rp"}
-# Run single task models on a dataset
-# Usage: ./factuality_single_task CB2
 
 OVERRIDES="exp_name = EXP_single_task_factuality"
 OVERRIDES+=", run_name = single-${TASK}"

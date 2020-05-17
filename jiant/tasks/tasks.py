@@ -3452,10 +3452,7 @@ class FactualityTask(Task):
     def update_metrics(self, logits, labels, tagmask=None):
         # for aggregating two metrics together.
         # so that we are maximizing both pearson R and 1-MAE
-        try:
-            self.mae_scorer(mean_absolute_error(logits, labels))  # update average MSE
-        except:
-            print(logits, labels)
+        self.mae_scorer(mean_absolute_error(logits, labels))  # update average MSE
         self.pearson_scorer(logits, labels)
         return
 

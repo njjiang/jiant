@@ -1,0 +1,394 @@
+{"text": "Yesterday I said that I intended to live by my wits .", "targets": [{"span1": [7, 8], "span_text": "live", "label": 1.5}], "uID": "pos4", "idx": 0}
+{"text": "It 's hard to imagine an aged person attempting to use this toothpaste in real life , said the manager .", "targets": [{"span1": [10, 11], "span_text": "use", "label": 1.5}], "uID": "pos12", "idx": 1}
+{"text": "Had he attempted to take the brill back with him , he would be caught in the torrent for sure .", "targets": [{"span1": [4, 5], "span_text": "take", "label": 1.0}], "uID": "pos14", "idx": 2}
+{"text": "We attempted to build a world class finance organization without any vision or agenda .", "targets": [{"span1": [3, 4], "span_text": "build", "label": 0.5}], "uID": "pos17", "idx": 3}
+{"text": "I started to slink away .", "targets": [{"span1": [3, 4], "span_text": "slink", "label": 2.5}], "uID": "pos24", "idx": 4}
+{"text": "The Washington based organization helped to overturn the practice .", "targets": [{"span1": [6, 7], "span_text": "overturn", "label": 1.5}], "uID": "pos28", "idx": 5}
+{"text": "He started to travel west at daybreak .", "targets": [{"span1": [3, 4], "span_text": "travel", "label": 2.5}], "uID": "pos39", "idx": 6}
+{"text": "The Post Office is forbidden from ever attempting to close any office .", "targets": [{"span1": [9, 10], "span_text": "close", "label": 3.0}], "uID": "pos45", "idx": 7}
+{"text": "The tobacco industry managed to get a higher stock market evaluation .", "targets": [{"span1": [5, 6], "span_text": "get", "label": 2.5}], "uID": "pos48", "idx": 8}
+{"text": "Florida knew exactly how the contractor managed to keep a low price .", "targets": [{"span1": [8, 9], "span_text": "keep", "label": 2.0}], "uID": "pos52", "idx": 9}
+{"text": "Titus managed to convert the entire area in record time .", "targets": [{"span1": [3, 4], "span_text": "convert", "label": 2.5}], "uID": "pos63", "idx": 10}
+{"text": "The new voices sought to replace the established order .", "targets": [{"span1": [5, 6], "span_text": "replace", "label": 0.5}], "uID": "pos88", "idx": 11}
+{"text": "Ca'daan agreed to take it .", "targets": [{"span1": [3, 4], "span_text": "take", "label": 1.5}], "uID": "pos92", "idx": 12}
+{"text": "Weld also has claimed to be a victim of Helms ' ideological extortion .", "targets": [{"span1": [5, 6], "span_text": "be", "label": 0.5}], "uID": "pos97", "idx": 13}
+{"text": "They said the hijackers wielded knives and claimed to have a bomb .", "targets": [{"span1": [9, 10], "span_text": "have", "label": 2.5}], "uID": "pos99", "idx": 14}
+{"text": "She claimed to have found her calling .", "targets": [{"span1": [3, 4], "span_text": "have", "label": 1.0}], "uID": "pos103", "idx": 15}
+{"text": "I happened to notice that it was bolted .", "targets": [{"span1": [3, 4], "span_text": "notice", "label": 2.0}], "uID": "pos106", "idx": 16}
+{"text": "They expect to have more software development effort .", "targets": [{"span1": [3, 4], "span_text": "have", "label": 0.0}], "uID": "pos107", "idx": 17}
+{"text": "Police officers wish to present legally obtained evidence .", "targets": [{"span1": [4, 5], "span_text": "present", "label": 1.0}], "uID": "pos112", "idx": 18}
+{"text": "She really loved to eat at her Greek restaurant .", "targets": [{"span1": [4, 5], "span_text": "eat", "label": 1.0}], "uID": "pos124", "idx": 19}
+{"text": "Everyone loves to be interrupted as they dine .", "targets": [{"span1": [3, 4], "span_text": "be", "label": 0.5}], "uID": "pos125", "idx": 20}
+{"text": "Some surmise that he 's cleverly waiting to unveil his platform .", "targets": [{"span1": [8, 9], "span_text": "unveil", "label": 1.5}], "uID": "pos129", "idx": 21}
+{"text": "There is no one waiting to discuss things .", "targets": [{"span1": [6, 7], "span_text": "discuss", "label": 0.5}], "uID": "pos132", "idx": 22}
+{"text": "30 people work to help account for inventory and related property .", "targets": [{"span1": [4, 5], "span_text": "help", "label": 2.5}], "uID": "pos136", "idx": 23}
+{"text": "He wished to be arrested .", "targets": [{"span1": [3, 4], "span_text": "be", "label": 0.0}], "uID": "pos141", "idx": 24}
+{"text": "The croseis said to weigh 181,740 tons .", "targets": [{"span1": [4, 5], "span_text": "weigh", "label": 1.5}], "uID": "pos143", "idx": 25}
+{"text": "He definitely meant to give the name to Nevis .", "targets": [{"span1": [4, 5], "span_text": "give", "label": -0.5}], "uID": "pos144", "idx": 26}
+{"text": "I meant to say Wong .", "targets": [{"span1": [3, 4], "span_text": "say", "label": -1.0}], "uID": "pos150", "idx": 27}
+{"text": "IRS also agreed to begin tracking information", "targets": [{"span1": [4, 5], "span_text": "begin", "label": 2.0}], "uID": "pos163", "idx": 28}
+{"text": "No enemy ships managed to get past the Golden Horn .", "targets": [{"span1": [5, 6], "span_text": "get", "label": 3.0}], "uID": "pos187", "idx": 29}
+{"text": "Harris 's business manages to impress his customers .", "targets": [{"span1": [5, 6], "span_text": "impress", "label": 3.0}], "uID": "pos188", "idx": 30}
+{"text": "It used to be paper 7 .", "targets": [{"span1": [3, 4], "span_text": "be", "label": 2.5}], "uID": "pos196", "idx": 31}
+{"text": "I began to feel quite big .", "targets": [{"span1": [3, 4], "span_text": "feel", "label": 2.0}], "uID": "pos201", "idx": 32}
+{"text": "You seem to know your stuff .", "targets": [{"span1": [3, 4], "span_text": "know", "label": 1.5}], "uID": "pos203", "idx": 33}
+{"text": "Congress tried to make things effecient .", "targets": [{"span1": [3, 4], "span_text": "make", "label": -0.5}], "uID": "pos207", "idx": 34}
+{"text": "Real wages continue to grow slowly .", "targets": [{"span1": [4, 5], "span_text": "grow", "label": 1.5}], "uID": "pos214", "idx": 35}
+{"text": "He refused to do the same .", "targets": [{"span1": [3, 4], "span_text": "do", "label": -2.0}], "uID": "pos216", "idx": 36}
+{"text": "I refuse to go .", "targets": [{"span1": [3, 4], "span_text": "go", "label": -2.0}], "uID": "pos219", "idx": 37}
+{"text": "The man continued to fight the animal .", "targets": [{"span1": [4, 5], "span_text": "fight", "label": 2.0}], "uID": "pos220", "idx": 38}
+{"text": "They try to see her views differently .", "targets": [{"span1": [3, 4], "span_text": "see", "label": 0.5}], "uID": "pos236", "idx": 39}
+{"text": "You need to do it right", "targets": [{"span1": [3, 4], "span_text": "do", "label": 1.0}], "uID": "pos241", "idx": 40}
+{"text": "I had to get space .", "targets": [{"span1": [3, 4], "span_text": "get", "label": 0.5}], "uID": "pos251", "idx": 41}
+{"text": "Hanson tried to make him feel better .", "targets": [{"span1": [3, 4], "span_text": "make", "label": 0.5}], "uID": "pos261", "idx": 42}
+{"text": "I 'm still trying to be confident .", "targets": [{"span1": [5, 6], "span_text": "be", "label": -1.0}], "uID": "pos262", "idx": 43}
+{"text": "Wolf tried to help the president out .", "targets": [{"span1": [3, 4], "span_text": "help", "label": 0.0}], "uID": "pos263", "idx": 44}
+{"text": "People like to rely on experts .", "targets": [{"span1": [3, 4], "span_text": "rely", "label": 2.0}], "uID": "pos296", "idx": 45}
+{"text": "Too bad it chose to use McIntyre instead .", "targets": [{"span1": [5, 6], "span_text": "use", "label": 3.0}], "uID": "pos316", "idx": 46}
+{"text": "He chose to do so .", "targets": [{"span1": [3, 4], "span_text": "do", "label": 2.0}], "uID": "pos319", "idx": 47}
+{"text": "Owners plan to keep the facility under budget .", "targets": [{"span1": [3, 4], "span_text": "keep", "label": 0.5}], "uID": "pos325", "idx": 48}
+{"text": "They refuse to tell us anything at all/", "targets": [{"span1": [3, 4], "span_text": "tell", "label": -2.5}], "uID": "pos338", "idx": 49}
+{"text": "The lawyers refused to take any classes .", "targets": [{"span1": [4, 5], "span_text": "take", "label": -2.0}], "uID": "pos345", "idx": 50}
+{"text": "The appendix fails to describe the model .", "targets": [{"span1": [4, 5], "span_text": "describe", "label": -3.0}], "uID": "pos368", "idx": 51}
+{"text": "They refuse to admit that they are wrong .", "targets": [{"span1": [3, 4], "span_text": "admit", "label": -2.5}], "uID": "pos378", "idx": 52}
+{"text": "Seasons of plenty alternate with leaner periods when the people prepare to mend and make do .", "targets": [{"span1": [12, 13], "span_text": "mend", "label": 1.5}], "uID": "pos385", "idx": 53}
+{"text": "Whether this is an ineffective avenue to higher costs and improve performance remains to be seen .", "targets": [{"span1": [14, 15], "span_text": "be", "label": -2.5}], "uID": "pos390", "idx": 54}
+{"text": "He moved to look at me and took out his tobacco .", "targets": [{"span1": [3, 4], "span_text": "look", "label": 1.5}], "uID": "pos401", "idx": 55}
+{"text": "He dared to look up .", "targets": [{"span1": [3, 4], "span_text": "look", "label": 2.5}], "uID": "pos422", "idx": 56}
+{"text": "Richard Lugar , who chairs the Agriculture Committee , proposes to buy them out over a few years and then leave tobacco to the market .", "targets": [{"span1": [11, 12], "span_text": "buy", "label": 0.5}], "uID": "pos431", "idx": 57}
+{"text": "What made you think he 'd ceased to take any interest in the case ? asked Tommy curiously .", "targets": [{"span1": [8, 9], "span_text": "take", "label": -0.5}], "uID": "pos443", "idx": 58}
+{"text": "The public deserves to know what 's going on with its money .", "targets": [{"span1": [4, 5], "span_text": "know", "label": -1.0}], "uID": "pos455", "idx": 59}
+{"text": "When a college audience annoys him by clamoring for Latka and Mighty Mouse , Carrey as Kaufman proceeds to read all of The Great Gatsby on stage .", "targets": [{"span1": [19, 20], "span_text": "read", "label": 3.0}], "uID": "pos456", "idx": 60}
+{"text": "Suddenly , the spirit began to move away .", "targets": [{"span1": [6, 7], "span_text": "move", "label": 2.0}], "uID": "pos474", "idx": 61}
+{"text": "Every new thing seems to prove it .", "targets": [{"span1": [5, 6], "span_text": "prove", "label": 2.0}], "uID": "pos476", "idx": 62}
+{"text": "In 1903 , railroad officials visited Las Vegas hoping to secure land to build on .", "targets": [{"span1": [10, 11], "span_text": "secure", "label": 0.5}], "uID": "pos480", "idx": 63}
+{"text": "People wishing to get lessons and rent equipment have the chance .", "targets": [{"span1": [3, 4], "span_text": "get", "label": 2.0}], "uID": "pos481", "idx": 64}
+{"text": "Many of the high packhorse routes had ceased to be used for the transportation of goods , but these old rights of way for foot and bridle traffic were now transformed into an extensive network of marked and mapped routes ideal for recreational walkers and hikers .", "targets": [{"span1": [9, 10], "span_text": "be", "label": 0.0}], "uID": "pos482", "idx": 65}
+{"text": "As we strive to continue and improve upon our efforts for the community , it is our hope that you will join us by providing Keep Indianapolis Beautiful with a generous gift .", "targets": [{"span1": [4, 5], "span_text": "continue", "label": 3.0}], "uID": "pos488", "idx": 66}
+{"text": "Walker 's two clients , Jamie Harrison and Robin Hull , declined to be interviewed .", "targets": [{"span1": [13, 14], "span_text": "be", "label": -1.0}], "uID": "pos491", "idx": 67}
+{"text": "He had to be escorted off .", "targets": [{"span1": [3, 4], "span_text": "be", "label": 1.5}], "uID": "pos497", "idx": 68}
+{"text": "The Soviet Union intended to invade the Japanese mainland .", "targets": [{"span1": [5, 6], "span_text": "invade", "label": 0.5}], "uID": "pos505", "idx": 69}
+{"text": "The man planned to kill someone with his axe .", "targets": [{"span1": [4, 5], "span_text": "kill", "label": 0.5}], "uID": "pos508", "idx": 70}
+{"text": "Personal Communication with a utility engineer that asked to remain anonymous , August 6 , 2001 .", "targets": [{"span1": [9, 10], "span_text": "remain", "label": 1.0}], "uID": "pos530", "idx": 71}
+{"text": "Tourist love to take pictures of the beautiful panorama .", "targets": [{"span1": [3, 4], "span_text": "take", "label": 1.5}], "uID": "pos534", "idx": 72}
+{"text": "He and his wife , Addie , spent years working to make the Holocaust Memorial Museum a reality .", "targets": [{"span1": [11, 12], "span_text": "make", "label": 2.5}], "uID": "pos536", "idx": 73}
+{"text": "All feature a blend of ancient and modern , of dignity and fun , and strive to make the visitor feel welcome and treasured .", "targets": [{"span1": [17, 18], "span_text": "make", "label": 2.0}], "uID": "pos544", "idx": 74}
+{"text": "In 1023 b.c . the chief of tribes disagreed about a king and ended up starting a war , forgetting to elect a king .", "targets": [{"span1": [21, 22], "span_text": "elect", "label": -1.0}], "uID": "pos558", "idx": 75}
+{"text": "Suddenly , Boris moved forward , and threatened to hit Tommy in the face .", "targets": [{"span1": [9, 10], "span_text": "hit", "label": -1.0}], "uID": "pos570", "idx": 76}
+{"text": "Someone promised to call and was excited to talk about a topic .", "targets": [{"span1": [3, 4], "span_text": "call", "label": 1.5}], "uID": "pos579", "idx": 77}
+{"text": "Huntington promises to make the West the best part of the country .", "targets": [{"span1": [3, 4], "span_text": "make", "label": -0.5}], "uID": "pos580", "idx": 78}
+{"text": "Drew strove to make his body one with Shiloh 's small easy movements .", "targets": [{"span1": [3, 4], "span_text": "make", "label": 2.0}], "uID": "pos582", "idx": 79}
+{"text": "Johnson encouraged Kennedy to run and promised to do whatever he could to help him .", "targets": [{"span1": [8, 15], "span_text": "do whatever he could to help him", "label": 1.0}], "uID": "pos592", "idx": 80}
+{"text": "The program aims to drastically increase the levels of NOx and SO2 .", "targets": [{"span1": [5, 6], "span_text": "increase", "label": 1.0}], "uID": "pos609", "idx": 81}
+{"text": "The medical industry serves to keep us dying in droves .", "targets": [{"span1": [5, 6], "span_text": "keep", "label": 2.0}], "uID": "pos615", "idx": 82}
+{"text": "The Minato Mirai 21 project aimed to build more hotels in the city center .", "targets": [{"span1": [7, 8], "span_text": "build", "label": 1.5}], "uID": "pos619", "idx": 83}
+{"text": "Julius Hersheimmer pretended to be someone called Brown .", "targets": [{"span1": [4, 5], "span_text": "be", "label": -2.5}], "uID": "pos624", "idx": 84}
+{"text": "But in her hurry to be in time for the village entertainment Mrs. Inglethorp forgot to take her medicine , and the next day she lunched away from home , so that the last \\xe2\\x80\\x9dand fatal \\xe2\\x80\\x9ddose was actually taken twenty - four hours later than had been anticipated by the murderer ; and it is owing to that delay that the final proof \\xe2\\x80\\x9dthe last link of the chain \\xe2\\x80\\x9dis now in my hands . Amid breathless excitement , he held out three thin strips of paper .", "targets": [{"span1": [16, 17], "span_text": "take", "label": -1.0}], "uID": "pos625", "idx": 85}
+{"text": "My security clearance was only moderate , but a couple of well placed bribes served to jack it up a notch or two .", "targets": [{"span1": [16, 17], "span_text": "jack", "label": 3.0}], "uID": "pos627", "idx": 86}
+{"text": "In reality , Japan struggles to maintain its economy .", "targets": [{"span1": [6, 7], "span_text": "maintain", "label": -1.0}], "uID": "pos638", "idx": 87}
+{"text": "Poirot 's expression confirmed that Bauerstein is a spy .", "targets": [{"span1": [6, 7], "span_text": "is", "label": 3.0}], "uID": "pos644", "idx": 88}
+{"text": "Serp Perth admitted that they forgot and were apologetic .", "targets": [{"span1": [5, 6], "span_text": "forgot", "label": 3.0}], "uID": "pos656", "idx": 89}
+{"text": "He admits that he owns a safe .", "targets": [{"span1": [4, 5], "span_text": "owns", "label": 2.5}], "uID": "pos659", "idx": 90}
+{"text": "My friend noticed that the cup was full of piping hot coffee .", "targets": [{"span1": [6, 7], "span_text": "was", "label": 2.0}], "uID": "pos663", "idx": 91}
+{"text": "Are you implying that it was Rita ?", "targets": [{"span1": [5, 6], "span_text": "was", "label": 0.5}], "uID": "pos669", "idx": 92}
+{"text": "In my last message , I observed that West , like Gates , wants to be Du Bois when he grows up .", "targets": [{"span1": [13, 14], "span_text": "wants", "label": 2.0}], "uID": "pos680", "idx": 93}
+{"text": "Clinton asserted that she was responsible for key legislation .", "targets": [{"span1": [4, 5], "span_text": "was", "label": 1.0}], "uID": "pos705", "idx": 94}
+{"text": "It was expected that the Sevens Swords would do well the night before .", "targets": [{"span1": [4, 13], "span_text": "the Sevens Swords would do well the night before", "label": 0.5}], "uID": "pos714", "idx": 95}
+{"text": "It is expected that his transition will be smooth .", "targets": [{"span1": [7, 8], "span_text": "be", "label": 0.5}], "uID": "pos720", "idx": 96}
+{"text": "Poirot decided that Miss Howard must be kept in the dark .", "targets": [{"span1": [3, 11], "span_text": "Miss Howard must be kept in the dark", "label": 0.5}], "uID": "pos723", "idx": 97}
+{"text": "Critics decided that his 1960s work will be forgotten .", "targets": [{"span1": [8, 9], "span_text": "forgotten", "label": 1.0}], "uID": "pos724", "idx": 98}
+{"text": "Black Holes prove that there is no God at all .", "targets": [{"span1": [5, 6], "span_text": "is", "label": 1.5}], "uID": "pos730", "idx": 99}
+{"text": "Analysis of security incidents revealed that there was significant progress in minimizing securiy breach risk .", "targets": [{"span1": [7, 8], "span_text": "was", "label": 2.0}], "uID": "pos734", "idx": 100}
+{"text": "I insisted that I needed to give her more attention and she got upset .", "targets": [{"span1": [4, 5], "span_text": "needed", "label": 0.5}], "uID": "pos749", "idx": 101}
+{"text": "Hersh insists that Pollard gave away no US intelligence .", "targets": [{"span1": [4, 5], "span_text": "gave", "label": 2.0}], "uID": "pos753", "idx": 102}
+{"text": "He was worried that they would see through them", "targets": [{"span1": [4, 8], "span_text": "they would see through", "label": 0.5}], "uID": "pos755", "idx": 103}
+{"text": "As we drove through the village , I remembered that I wanted some stamps , so accordingly we pulled up at the post office .", "targets": [{"span1": [11, 12], "span_text": "wanted", "label": 3.0}], "uID": "pos766", "idx": 104}
+{"text": "Scuba divers remember that coral is plentiful so you might as well take some .", "targets": [{"span1": [5, 6], "span_text": "is", "label": 2.5}], "uID": "pos772", "idx": 105}
+{"text": "They also gained control of most of their manufacturing processes and demonstrated that the products were reliable before entering production .", "targets": [{"span1": [15, 16], "span_text": "were", "label": 2.0}], "uID": "pos779", "idx": 106}
+{"text": "One theory holds that young white girls -lrb - unlike young black girls - rrb- subscribe to a cult of thinness , and smoke to block their appetite .", "targets": [{"span1": [6, 7], "span_text": "girls", "label": 1.5}], "uID": "pos788", "idx": 107}
+{"text": "At other times they complain that workfarers have taken good , desirable union jobs away from others .", "targets": [{"span1": [8, 9], "span_text": "taken", "label": 1.0}], "uID": "pos793", "idx": 108}
+{"text": "We propose that it should take place to - morrow night , or rather to - night .", "targets": [{"span1": [3, 17], "span_text": "it should take place to - morrow night , or rather to - night", "label": 0.0}], "uID": "pos801", "idx": 109}
+{"text": "GAO is requesting that the agencies provide their written comments electronically in order to comply with Section 508 of the Rehabilitation Act .", "targets": [{"span1": [6, 7], "span_text": "provide", "label": 0.5}], "uID": "pos807", "idx": 110}
+{"text": "We hope that there are no more fires .", "targets": [{"span1": [4, 5], "span_text": "are", "label": 0.0}], "uID": "pos816", "idx": 111}
+{"text": "Daniel Pollock added that the message of the recommendations could also be conveyed at professional meetings .", "targets": [{"span1": [4, 16], "span_text": "the message of the recommendations could also be conveyed at professional meetings", "label": 2.0}], "uID": "pos820", "idx": 112}
+{"text": "To funders , sadly , it seems that it is a zero sum game .", "targets": [{"span1": [9, 10], "span_text": "is", "label": 1.5}], "uID": "pos832", "idx": 113}
+{"text": "It seems that everyone in England is gay .", "targets": [{"span1": [6, 7], "span_text": "is", "label": -1.0}], "uID": "pos834", "idx": 114}
+{"text": "He was worried that the adults would suspect something .", "targets": [{"span1": [4, 9], "span_text": "the adults would suspect something", "label": 0.0}], "uID": "pos840", "idx": 115}
+{"text": "Be warned that the pubs around O'Connell Street can be rough , and at times Temple Bar pubs can be rowdy .", "targets": [{"span1": [3, 21], "span_text": "the pubs around O'Connell Street can be rough , and at times Temple Bar pubs can be rowdy", "label": 2.0}], "uID": "pos848", "idx": 116}
+{"text": "It warns that Mayor Giuliani 's proposed pay freeze could destroy the NYPD 's new esprit de corps .", "targets": [{"span1": [3, 18], "span_text": "Mayor Giuliani 's proposed pay freeze could destroy the NYPD 's new esprit de corps", "label": 2.5}], "uID": "pos850", "idx": 117}
+{"text": "Beyea has found that GALs are very beneficial .", "targets": [{"span1": [5, 6], "span_text": "are", "label": 2.5}], "uID": "pos875", "idx": 118}
+{"text": "He found that silk was perfect for the rich .", "targets": [{"span1": [4, 5], "span_text": "was", "label": 2.5}], "uID": "pos877", "idx": 119}
+{"text": "He noted that he prefers the AUDIT .", "targets": [{"span1": [4, 5], "span_text": "prefers", "label": 3.0}], "uID": "pos885", "idx": 120}
+{"text": "The studies show that the results can be positive .", "targets": [{"span1": [4, 9], "span_text": "the results can be positive", "label": 3.0}], "uID": "pos889", "idx": 121}
+{"text": "He is showing that they guessed correctly .", "targets": [{"span1": [5, 6], "span_text": "guessed", "label": 1.5}], "uID": "pos893", "idx": 122}
+{"text": "Table 1 indicates that a gap exists between the two practices", "targets": [{"span1": [6, 7], "span_text": "exists", "label": 3.0}], "uID": "pos913", "idx": 123}
+{"text": "I have reported that they have countless times in the past .", "targets": [{"span1": [5, 6], "span_text": "have", "label": 2.0}], "uID": "pos917", "idx": 124}
+{"text": "The report states that rules were meant to be broken .", "targets": [{"span1": [6, 7], "span_text": "meant", "label": 1.5}], "uID": "pos924", "idx": 125}
+{"text": "She suggested that Bush be calm .", "targets": [{"span1": [4, 5], "span_text": "be", "label": 0.5}], "uID": "pos933", "idx": 126}
+{"text": "I think that you cured me doctor .", "targets": [{"span1": [4, 5], "span_text": "cured", "label": 1.0}], "uID": "pos938", "idx": 127}
+{"text": "Culturebox believes that women are superior .", "targets": [{"span1": [4, 5], "span_text": "are", "label": 0.0}], "uID": "pos942", "idx": 128}
+{"text": "Only one party knew that he was coming to town .", "targets": [{"span1": [7, 8], "span_text": "coming", "label": 3.0}], "uID": "pos962", "idx": 129}
+{"text": "They might have known that you ride for Hunt .", "targets": [{"span1": [6, 7], "span_text": "ride", "label": 2.5}], "uID": "pos963", "idx": 130}
+{"text": "Jon knew that San'doro 's vision was blurred .", "targets": [{"span1": [7, 8], "span_text": "blurred", "label": 3.0}], "uID": "pos964", "idx": 131}
+{"text": "Drew knew that Johnny Shannon was no man .", "targets": [{"span1": [5, 6], "span_text": "was", "label": 2.0}], "uID": "pos973", "idx": 132}
+{"text": "And you have known that John is guilty ?", "targets": [{"span1": [6, 7], "span_text": "is", "label": 1.0}], "uID": "pos976", "idx": 133}
+{"text": "Perhaps The Treasure of the Sierra Madre was showing in Cambridge that weekend and each economist realized that he would always have to worry about the other two guys .", "targets": [{"span1": [18, 29], "span_text": "he would always have to worry about the other two guys", "label": 2.0}], "uID": "pos992", "idx": 134}
+{"text": "And finally he realized that he was thinking of a model -- the one thing which is functionally the perfect analogue .", "targets": [{"span1": [7, 8], "span_text": "thinking", "label": 2.5}], "uID": "pos999", "idx": 135}
+{"text": "He realized that he had to leave this house for the sake of his health .", "targets": [{"span1": [4, 5], "span_text": "had", "label": 3.0}], "uID": "pos1011", "idx": 136}
+{"text": "No one realizes that the Roman empire had serious internal weaknesses .", "targets": [{"span1": [7, 8], "span_text": "had", "label": 3.0}], "uID": "pos1012", "idx": 137}
+{"text": "And I realized that , had Simon followed Lerner 's advice and started writing musicals , we 'd have had to get to the theater at 10:30 in the morning to read up on the textual footnotes .", "targets": [{"span1": [7, 8], "span_text": "followed", "label": -1.5}], "uID": "pos1016", "idx": 138}
+{"text": "She believed in her own abilities but she recognized that Mr. Carter 's arguments held truth .", "targets": [{"span1": [14, 15], "span_text": "held", "label": 1.5}], "uID": "pos1019", "idx": 139}
+{"text": "Ca'daan saw that they were hungry .", "targets": [{"span1": [4, 5], "span_text": "were", "label": 2.5}], "uID": "pos1025", "idx": 140}
+{"text": "HUD determined that rules could be approved without review .", "targets": [{"span1": [3, 9], "span_text": "rules could be approved without review", "label": 1.0}], "uID": "pos1032", "idx": 141}
+{"text": "Mr. Brown felt that three hours was more than enough for him .", "targets": [{"span1": [6, 7], "span_text": "was", "label": 2.0}], "uID": "pos1035", "idx": 142}
+{"text": "Tuppence felt that her previous opinion was proven correct .", "targets": [{"span1": [7, 8], "span_text": "proven", "label": 1.5}], "uID": "pos1036", "idx": 143}
+{"text": "I assumed that it was two o'clock in the morning .", "targets": [{"span1": [4, 5], "span_text": "was", "label": 1.0}], "uID": "pos1062", "idx": 144}
+{"text": "Epstein agrees that we need some laws .", "targets": [{"span1": [4, 5], "span_text": "need", "label": 2.0}], "uID": "pos1073", "idx": 145}
+{"text": "The data shows that the criteria had very little validity .", "targets": [{"span1": [6, 7], "span_text": "had", "label": 2.5}], "uID": "pos1106", "idx": 146}
+{"text": "Mrs. Cavendish 's desperation meant that her plans were half - baked .", "targets": [{"span1": [8, 9], "span_text": "were", "label": 2.5}], "uID": "pos1108", "idx": 147}
+{"text": "In response to our inquiry , OMB staff advised that the rule could be economically significant , and major , because it could adversely affect competition .", "targets": [{"span1": [10, 26], "span_text": "the rule could be economically significant , and major , because it could adversely affect competition", "label": 2.0}], "uID": "pos1124", "idx": 148}
+{"text": "An item speculates that sex will be more for recreation than procreation , because parents will choose to clone themselves or genetically engineer designer babies .", "targets": [{"span1": [6, 7], "span_text": "be", "label": 1.0}], "uID": "pos1126", "idx": 149}
+{"text": "Somehow I doubt that Bill Gates thinks of Dell as parasitic because its computers run only on Windows .", "targets": [{"span1": [6, 7], "span_text": "thinks", "label": -1.0}], "uID": "pos1127", "idx": 150}
+{"text": "Kleiman claimed that German uses a statewide website .", "targets": [{"span1": [4, 5], "span_text": "uses", "label": 0.5}], "uID": "pos1129", "idx": 151}
+{"text": "Cassidy seemingly admits that he holds bias against mainstream economists .", "targets": [{"span1": [5, 6], "span_text": "holds", "label": 2.0}], "uID": "pos1140", "idx": 152}
+{"text": "LSC further recognizes that its decisions have the potential to directly affect state funding , resource allocation , and other considerations .", "targets": [{"span1": [6, 7], "span_text": "have", "label": 2.0}], "uID": "pos1144", "idx": 153}
+{"text": "SSA estimates that reduced program outlays resulting from the rule will be $ 4 .", "targets": [{"span1": [11, 12], "span_text": "be", "label": 1.0}], "uID": "pos1150", "idx": 154}
+{"text": "Jon saw that everything was the same with Adrin .", "targets": [{"span1": [4, 5], "span_text": "was", "label": 3.0}], "uID": "pos1151", "idx": 155}
+{"text": "The council hopes that GPRA 's operations will be kept secret from the leaders .", "targets": [{"span1": [9, 10], "span_text": "kept", "label": 0.0}], "uID": "pos1162", "idx": 156}
+{"text": "The tabloid interviews 81-year - old actor Kirk Douglas , who reveals that his English teacher seduced him when he was 14 .", "targets": [{"span1": [16, 17], "span_text": "seduced", "label": 1.5}], "uID": "pos1166", "idx": 157}
+{"text": "Anti - tobacconists insist that nicotine 's addictive powers explain it all .", "targets": [{"span1": [9, 10], "span_text": "explain", "label": 2.0}], "uID": "pos1167", "idx": 158}
+{"text": "He now felt that Tuppence was all that was noble and disinterested .", "targets": [{"span1": [5, 6], "span_text": "was", "label": 0.5}], "uID": "pos1174", "idx": 159}
+{"text": "Zelon acknowledges that she makes an effort to ensure that jurors leave her courtroom with a sense of confidence in the organization of courtroom proceedings and the effectiveness of the trial - by - jury system .", "targets": [{"span1": [4, 5], "span_text": "makes", "label": 0.5}], "uID": "pos1183", "idx": 160}
+{"text": "I much feared that it would be impossible . The other answered in a low voice that had a kind of hiss in it : There were difficulties .", "targets": [{"span1": [4, 28], "span_text": "it would be impossible . The other answered in a low voice that had a kind of hiss in it : There were difficulties", "label": 0.0}], "uID": "pos1186", "idx": 161}
+{"text": "He began noticing that she carefully dumped his fingernail parings into a small jar .", "targets": [{"span1": [6, 7], "span_text": "dumped", "label": 2.0}], "uID": "pos1213", "idx": 162}
+{"text": "According to contemporaneous notes , at 9:55 the Vice President was still on the phone with the President advising that three planes were missing and one had hit the Pentagon .", "targets": [{"span1": [23, 24], "span_text": "missing", "label": 2.5}], "uID": "pos1218", "idx": 163}
+{"text": "The high quality of the seam on Milos ensured that the area remained popular with early travelers .", "targets": [{"span1": [12, 13], "span_text": "remained", "label": 2.5}], "uID": "pos1226", "idx": 164}
+{"text": "And when you hear that the anti - Microsoft side has retained the services of that economic and technology expert Bob Dole , you start to despair .", "targets": [{"span1": [11, 12], "span_text": "retained", "label": 2.25}], "uID": "pos1227", "idx": 165}
+{"text": "It must have come as an almost unbearable shock to the patriotic Frenchmen of New Orleans to be told that they were Spanish citizens .", "targets": [{"span1": [21, 22], "span_text": "were", "label": 2.0}], "uID": "pos1238", "idx": 166}
+{"text": "The unanimous ruling held that the state is constitutionally required to extend to same - sex couples the common benefits and protections that flow from marriage under Vermont law .", "targets": [{"span1": [9, 10], "span_text": "required", "label": 2.5}], "uID": "pos1241", "idx": 167}
+{"text": "Dissenting , the Wall Street Journal 's Donald Lyons complains that Leguizamo 's rants about Latino stereotypes make him a self - important bore .", "targets": [{"span1": [17, 18], "span_text": "make", "label": 1.0}], "uID": "pos1242", "idx": 168}
+{"text": "At 9:00 , American Airlines Executive Vice President Gerard Arpey learned that communications had been lost with American 77 .", "targets": [{"span1": [15, 16], "span_text": "lost", "label": 2.5}], "uID": "pos1250", "idx": 169}
+{"text": "However , participants understand that accountants are taking a risk when they issue an opinion on the financial statements .", "targets": [{"span1": [7, 8], "span_text": "taking", "label": 2.0}], "uID": "pos1251", "idx": 170}
+{"text": "Also , at the inquest , Mrs. Cavendish declared that she had heard , from her own room , the fall of the table by the bed .", "targets": [{"span1": [12, 13], "span_text": "heard", "label": 3.0}], "uID": "pos1257", "idx": 171}
+{"text": "It can be assumed that these questions will be asked .", "targets": [{"span1": [9, 10], "span_text": "asked", "label": 2.0}], "uID": "pos1259", "idx": 172}
+{"text": "News argues that all of America 's volunteers are doing a lot of good .", "targets": [{"span1": [9, 10], "span_text": "doing", "label": -0.5}], "uID": "pos1261", "idx": 173}
+{"text": "I find that Safire tries too hard to make his readers laugh .", "targets": [{"span1": [4, 5], "span_text": "tries", "label": 1.5}], "uID": "pos1265", "idx": 174}
+{"text": "Ruth Ann Schmitt , executive director of the Lawyers Trust Fund , which is covering some of the costs of the gathering , acknowledged that the legal aid community faces many problems but said the meeting could give attorneys a morale boost .", "targets": [{"span1": [29, 30], "span_text": "faces", "label": 2.5}], "uID": "pos1286", "idx": 175}
+{"text": "Most economists believe that the story is false .", "targets": [{"span1": [6, 7], "span_text": "is", "label": 0.5}], "uID": "pos1297", "idx": 176}
+{"text": "Participants commented that there are good solid audits being performed ; however , some participants expressed concern that overall , time and fee pressures both from company management and from within the auditing firms have resulted in less and less auditing , particularly less substantive testing of transactions .", "targets": [{"span1": [4, 5], "span_text": "are", "label": 0.5}], "uID": "pos1301", "idx": 177}
+{"text": "GAO is pulling out all the stops in ensuring that the recommended actions are followed through .", "targets": [{"span1": [14, 15], "span_text": "followed", "label": 1.0}], "uID": "pos1311", "idx": 178}
+{"text": "OK , I was a puddle after some scenes , like the one where Guaspari pushes a student to get her to improve her posture and discovers that the girl is wearing a leg brace .", "targets": [{"span1": [31, 32], "span_text": "wearing", "label": 2.5}], "uID": "pos1316", "idx": 179}
+{"text": "I was convinced that the alarm was given when Mrs. Cavendish was in the room .", "targets": [{"span1": [7, 8], "span_text": "given", "label": 1.5}], "uID": "pos1318", "idx": 180}
+{"text": "Reich writes that he is a Republican target .", "targets": [{"span1": [4, 5], "span_text": "is", "label": 2.0}], "uID": "pos1329", "idx": 181}
+{"text": "Legal Services Corp. spokesman Eric Kleiman contended that Atlas and his board have had ample opportunity to make their case to us .", "targets": [{"span1": [12, 13], "span_text": "have", "label": 1.5}], "uID": "pos1332", "idx": 182}
+{"text": "This act specifically provides that any awards granted under such a frequent traveler program accrued through official travel shall be used only for official travel .", "targets": [{"span1": [5, 25], "span_text": "any awards granted under such a frequent traveler program accrued through official travel shall be used only for official travel", "label": 2.5}], "uID": "pos1341", "idx": 183}
+{"text": "She wished that she could return to the past .", "targets": [{"span1": [3, 9], "span_text": "she could return to the past", "label": -0.5}], "uID": "pos1363", "idx": 184}
+{"text": "It appears that Clinton used a clever tactic that FDR called creative tension .", "targets": [{"span1": [4, 5], "span_text": "used", "label": 2.0}], "uID": "pos1376", "idx": 185}
+{"text": "It appears that she enjoys when it happens .", "targets": [{"span1": [4, 5], "span_text": "enjoys", "label": 1.5}], "uID": "pos1379", "idx": 186}
+{"text": "I felt from the first that there was something wrong about him , and I always suspected that it was he who silenced Mrs. Vandemeyer so appositely .", "targets": [{"span1": [19, 20], "span_text": "was", "label": 1.0}], "uID": "pos1382", "idx": 187}
+{"text": "A second reason some skeptics doubt that Albright could have been blindsided by her own life story is that since she has risen to prominence , the suggestion that she is Jewish has been raised repeatedly .", "targets": [{"span1": [7, 36], "span_text": "Albright could have been blindsided by her own life story is that since she has risen to prominence , the suggestion that she is Jewish has been raised repeatedly", "label": 2.5}], "uID": "pos1383", "idx": 188}
+{"text": "My dear young lady , as far as I recollect I only mentioned that there were equally good situations to be obtained elsewhere .", "targets": [{"span1": [15, 16], "span_text": "were", "label": 2.5}], "uID": "pos1388", "idx": 189}
+{"text": "Some editors of the Daily Cal mentioned that the campus was once leftist .", "targets": [{"span1": [10, 11], "span_text": "was", "label": 1.5}], "uID": "pos1393", "idx": 190}
+{"text": "The duty officer replied that security personnel at headquarters had just begun discussing the apparent hijack on a conference call with the New England regional office .", "targets": [{"span1": [11, 12], "span_text": "begun", "label": 1.5}], "uID": "pos1422", "idx": 191}
+{"text": "It may just have been that we were too early .", "targets": [{"span1": [7, 8], "span_text": "were", "label": 0.5}], "uID": "pos1447", "idx": 192}
+{"text": "He said that it was on page 23 .", "targets": [{"span1": [4, 5], "span_text": "was", "label": 2.0}], "uID": "pos1448", "idx": 193}
+{"text": "DiClemente commented that such adjustments to instruments are often necessary .", "targets": [{"span1": [7, 8], "span_text": "are", "label": 2.0}], "uID": "pos1455", "idx": 194}
+{"text": "The more orthodox Muslims were concerned that Islam was being abandoned , and rebellions sprang up in Bengal , Bihar , and the Punjab .", "targets": [{"span1": [10, 11], "span_text": "abandoned", "label": 0.0}], "uID": "pos1470", "idx": 195}
+{"text": "Stay in touch , the door shut and along with it any hope that Tuppence could resolve this situation .", "targets": [{"span1": [14, 19], "span_text": "Tuppence could resolve this situation", "label": -1.0}], "uID": "pos1474", "idx": 196}
+{"text": "After learning that one of its members had been taken in by the scheme , the Middle East Studies Association posted a warning on its Web site .", "targets": [{"span1": [9, 10], "span_text": "taken", "label": 2.5}], "uID": "pos1480", "idx": 197}
+{"text": "You might ask why Microsoft is punished by the loss of an Internet Explorer user , given that Internet Explorer can be downloaded free .", "targets": [{"span1": [18, 24], "span_text": "Internet Explorer can be downloaded free", "label": 3.0}], "uID": "pos1484", "idx": 198}
+{"text": "Yesterday I said that I did not intend to live by my wits .", "targets": [{"span1": [9, 10], "span_text": "live", "label": -2.0}], "uID": "neg4", "idx": 199}
+{"text": "I do not intend to do the same for myself as well .", "targets": [{"span1": [5, 6], "span_text": "do", "label": -2.0}], "uID": "neg7", "idx": 200}
+{"text": "It 's hard to imagine an aged person not attempting to use this toothpaste in real life , said the manager .", "targets": [{"span1": [11, 12], "span_text": "use", "label": -1.5}], "uID": "neg12", "idx": 201}
+{"text": "When he does not attempt to lampoon what he sees as a silly orthodoxy , he often just gets it wrong .", "targets": [{"span1": [6, 7], "span_text": "lampoon", "label": -0.5}], "uID": "neg15", "idx": 202}
+{"text": "Anyone who does not attempt to enter after we have done so will be arrested immediately .", "targets": [{"span1": [6, 7], "span_text": "enter", "label": 0.0}], "uID": "neg20", "idx": 203}
+{"text": "I 've not got to say something .", "targets": [{"span1": [5, 6], "span_text": "say", "label": -2.0}], "uID": "neg34", "idx": 204}
+{"text": "In fact , I eventually did not start to like it .", "targets": [{"span1": [9, 10], "span_text": "like", "label": -2.5}], "uID": "neg38", "idx": 205}
+{"text": "The Post Office is forbidden from ever not attempting to close any office .", "targets": [{"span1": [10, 11], "span_text": "close", "label": -0.5}], "uID": "neg45", "idx": 206}
+{"text": "They did not manage to sever his femoral artery and he died shortly after .", "targets": [{"span1": [5, 6], "span_text": "sever", "label": -0.5}], "uID": "neg50", "idx": 207}
+{"text": "Florida knew exactly how the contractor did not manage to keep a low price .", "targets": [{"span1": [10, 11], "span_text": "keep", "label": -2.5}], "uID": "neg52", "idx": 208}
+{"text": "Travel brochures have not managed to make Mt. Fuji mundane and tacky .", "targets": [{"span1": [6, 7], "span_text": "make", "label": -2.0}], "uID": "neg54", "idx": 209}
+{"text": "He did not manage to dig a small hollow in the sand before dropping off to sleep .", "targets": [{"span1": [5, 6], "span_text": "dig", "label": -2.5}], "uID": "neg58", "idx": 210}
+{"text": "His love unrequited , he did not attempt to think of other things .", "targets": [{"span1": [9, 10], "span_text": "think", "label": -1.5}], "uID": "neg75", "idx": 211}
+{"text": "Their LiveTopics technology does not attempt to help you do this .", "targets": [{"span1": [7, 8], "span_text": "help", "label": -1.5}], "uID": "neg76", "idx": 212}
+{"text": "A man did not attempt to kill Hitler with a bomb .", "targets": [{"span1": [6, 7], "span_text": "kill", "label": -1.5}], "uID": "neg79", "idx": 213}
+{"text": "The opponent did not manage to get back on his feet after rolling outside the blow .", "targets": [{"span1": [6, 7], "span_text": "get", "label": -2.5}], "uID": "neg82", "idx": 214}
+{"text": "WRAP does not seek to reduce SO2 by 20 % in the next twenty years .", "targets": [{"span1": [5, 6], "span_text": "reduce", "label": -1.0}], "uID": "neg86", "idx": 215}
+{"text": "They said the hijackers wielded knives and did not claim to have a bomb .", "targets": [{"span1": [11, 12], "span_text": "have", "label": -1.0}], "uID": "neg99", "idx": 216}
+{"text": "Both the Post and ABC do not claim to have copies of the original TP .", "targets": [{"span1": [9, 10], "span_text": "have", "label": -1.0}], "uID": "neg101", "idx": 217}
+{"text": "Republicans do not expect to draw in black voter with the issue .", "targets": [{"span1": [5, 6], "span_text": "draw", "label": -1.0}], "uID": "neg105", "idx": 218}
+{"text": "Holland did not expect to get a lot of money .", "targets": [{"span1": [5, 6], "span_text": "get", "label": -1.5}], "uID": "neg109", "idx": 219}
+{"text": "Some surmise that he 's cleverly not waiting to unveil his platform .", "targets": [{"span1": [9, 10], "span_text": "unveil", "label": 0.0}], "uID": "neg129", "idx": 220}
+{"text": "He did not happen to have an old envelope and a pen in one of his pockets .", "targets": [{"span1": [5, 6], "span_text": "have", "label": -3.0}], "uID": "neg130", "idx": 221}
+{"text": "We had not meant to do this for a while .", "targets": [{"span1": [5, 6], "span_text": "do", "label": 0.0}], "uID": "neg149", "idx": 222}
+{"text": "Mistuh Nye does not say to tell you he 'll be back .", "targets": [{"span1": [6, 7], "span_text": "tell", "label": -1.5}], "uID": "neg151", "idx": 223}
+{"text": "They do not prefer to have their own area of operation .", "targets": [{"span1": [5, 6], "span_text": "have", "label": -1.0}], "uID": "neg154", "idx": 224}
+{"text": "Tommy did not say to hold on hard .", "targets": [{"span1": [5, 6], "span_text": "hold", "label": 0.0}], "uID": "neg157", "idx": 225}
+{"text": "They had not agreed to take a day of rest in the barrens .", "targets": [{"span1": [5, 6], "span_text": "take", "label": -1.5}], "uID": "neg161", "idx": 226}
+{"text": "IRS also did not agree to begin tracking information", "targets": [{"span1": [6, 7], "span_text": "begin", "label": -1.0}], "uID": "neg163", "idx": 227}
+{"text": "She had not meant to warn Mr. Brown about Tuppence .", "targets": [{"span1": [5, 6], "span_text": "warn", "label": 0.0}], "uID": "neg164", "idx": 228}
+{"text": "Congress does not hope to spend less on pilot projects for the same results .", "targets": [{"span1": [5, 6], "span_text": "spend", "label": -1.0}], "uID": "neg171", "idx": 229}
+{"text": "The United States does not prefer to use the 1974 benchmark .", "targets": [{"span1": [7, 8], "span_text": "use", "label": -0.5}], "uID": "neg177", "idx": 230}
+{"text": "He has not proven to be skilled in football .", "targets": [{"span1": [5, 6], "span_text": "be", "label": -2.5}], "uID": "neg183", "idx": 231}
+{"text": "No enemy ships did not manage to get past the Golden Horn .", "targets": [{"span1": [7, 8], "span_text": "get", "label": -0.5}], "uID": "neg187", "idx": 232}
+{"text": "I did not used to read all of the time .", "targets": [{"span1": [5, 6], "span_text": "read", "label": -0.5}], "uID": "neg192", "idx": 233}
+{"text": "Susan did not seem to watch them all .", "targets": [{"span1": [5, 6], "span_text": "watch", "label": -1.5}], "uID": "neg199", "idx": 234}
+{"text": "I did not begin to feel very small .", "targets": [{"span1": [5, 6], "span_text": "feel", "label": -1.5}], "uID": "neg212", "idx": 235}
+{"text": "Damn ! said Tommy , and did not try to sit up .", "targets": [{"span1": [10, 11], "span_text": "sit", "label": -2.5}], "uID": "neg213", "idx": 236}
+{"text": "He did not continue to talk about fish .", "targets": [{"span1": [5, 6], "span_text": "talk", "label": -3.0}], "uID": "neg226", "idx": 237}
+{"text": "I do not refuse to give you a toast .", "targets": [{"span1": [5, 6], "span_text": "give", "label": 1.5}], "uID": "neg237", "idx": 238}
+{"text": "I did not need to lie down .", "targets": [{"span1": [5, 6], "span_text": "lie", "label": 0.5}], "uID": "neg243", "idx": 239}
+{"text": "I did not try to tolerate it .", "targets": [{"span1": [5, 6], "span_text": "tolerate", "label": -0.5}], "uID": "neg249", "idx": 240}
+{"text": "We do not want to see it again .", "targets": [{"span1": [5, 6], "span_text": "see", "label": -1.0}], "uID": "neg252", "idx": 241}
+{"text": "Yates has not tried to save it for years .", "targets": [{"span1": [5, 6], "span_text": "save", "label": -1.0}], "uID": "neg264", "idx": 242}
+{"text": "Adrin did not try to put Jon off balance .", "targets": [{"span1": [5, 6], "span_text": "put", "label": 0.0}], "uID": "neg267", "idx": 243}
+{"text": "I do not refuse to live in this place .", "targets": [{"span1": [5, 6], "span_text": "live", "label": 1.0}], "uID": "neg284", "idx": 244}
+{"text": "He did not appear to be a heroic character .", "targets": [{"span1": [5, 6], "span_text": "be", "label": -1.0}], "uID": "neg287", "idx": 245}
+{"text": "It does not appear to be a trap .", "targets": [{"span1": [5, 6], "span_text": "be", "label": -2.5}], "uID": "neg294", "idx": 246}
+{"text": "People do not like to rely on experts .", "targets": [{"span1": [5, 6], "span_text": "rely", "label": -0.5}], "uID": "neg296", "idx": 247}
+{"text": "We do not plan to use our studies .", "targets": [{"span1": [5, 6], "span_text": "use", "label": -1.5}], "uID": "neg297", "idx": 248}
+{"text": "Once they did not come to look at me .", "targets": [{"span1": [6, 7], "span_text": "look", "label": -1.0}], "uID": "neg324", "idx": 249}
+{"text": "I do not refuse to speak to the townspeople .", "targets": [{"span1": [5, 6], "span_text": "speak", "label": 1.0}], "uID": "neg334", "idx": 250}
+{"text": "Bush did not refuse to adopt the saying .", "targets": [{"span1": [5, 6], "span_text": "adopt", "label": -1.0}], "uID": "neg352", "idx": 251}
+{"text": "Jamaicans do not tend to get in people 's face .", "targets": [{"span1": [5, 6], "span_text": "get", "label": -1.0}], "uID": "neg357", "idx": 252}
+{"text": "They did not decide to stay together .", "targets": [{"span1": [5, 6], "span_text": "stay", "label": -1.0}], "uID": "neg364", "idx": 253}
+{"text": "Who did not decide to pick me ?", "targets": [{"span1": [5, 6], "span_text": "pick", "label": -2.0}], "uID": "neg366", "idx": 254}
+{"text": "I did not decide to try it .", "targets": [{"span1": [5, 6], "span_text": "try", "label": -1.0}], "uID": "neg367", "idx": 255}
+{"text": "Tommy muttered under his breath , not preparing to speak again .", "targets": [{"span1": [9, 10], "span_text": "speak", "label": -1.5}], "uID": "neg387", "idx": 256}
+{"text": "Whether this is an effective avenue to lower costs and improve performance does not remain to be seen .", "targets": [{"span1": [16, 17], "span_text": "be", "label": 0.5}], "uID": "neg391", "idx": 257}
+{"text": "LSC and LSNJ have both not moved to dismiss the case .", "targets": [{"span1": [8, 9], "span_text": "dismiss", "label": -2.5}], "uID": "neg392", "idx": 258}
+{"text": "The secret of these fish is so well kept that no emperor has not dared to take control lest this secret become lost .", "targets": [{"span1": [16, 17], "span_text": "take", "label": 1.5}], "uID": "neg398", "idx": 259}
+{"text": "I did not proceed to reason on that assumption .", "targets": [{"span1": [5, 6], "span_text": "reason", "label": -2.5}], "uID": "neg411", "idx": 260}
+{"text": "Regardless of the murder that had occurred days earlier , she did not return to work that day .", "targets": [{"span1": [15, 16], "span_text": "work", "label": -2.0}], "uID": "neg414", "idx": 261}
+{"text": "The investigator took a break but soon did not return to ask more questions .", "targets": [{"span1": [11, 12], "span_text": "ask", "label": -2.5}], "uID": "neg417", "idx": 262}
+{"text": "I am in your debt and still do not hope to call on you in the future .", "targets": [{"span1": [11, 12], "span_text": "call", "label": -1.0}], "uID": "neg428", "idx": 263}
+{"text": "The voters do not deserve to know the truth .", "targets": [{"span1": [6, 7], "span_text": "know", "label": 0.0}], "uID": "neg439", "idx": 264}
+{"text": "Julius Caesar 's nephew Octavian took the name Augustus ; Rome did not cease to be a republic , and became an empire .", "targets": [{"span1": [15, 16], "span_text": "be", "label": 2.5}], "uID": "neg442", "idx": 265}
+{"text": "What made you think he 'd not ceased to take any interest in the case ? asked Tommy curiously .", "targets": [{"span1": [9, 10], "span_text": "take", "label": 0.5}], "uID": "neg443", "idx": 266}
+{"text": "Welldeveloped techniques do not exist to provide monetary estimates of these benefits to agricultural producers and consumers .", "targets": [{"span1": [6, 7], "span_text": "provide", "label": -1.0}], "uID": "neg448", "idx": 267}
+{"text": "But I think it did not help to support the idea that he knew what he was doing .", "targets": [{"span1": [8, 9], "span_text": "support", "label": 0.5}], "uID": "neg462", "idx": 268}
+{"text": "She did not tend to change her mind when confronted .", "targets": [{"span1": [5, 6], "span_text": "change", "label": -1.0}], "uID": "neg470", "idx": 269}
+{"text": "He even did not get to learn the girl 's name .", "targets": [{"span1": [6, 7], "span_text": "learn", "label": -3.0}], "uID": "neg503", "idx": 270}
+{"text": "I do all the things I do not like to do .", "targets": [{"span1": [10, 11], "span_text": "do", "label": 0.5}], "uID": "neg509", "idx": 271}
+{"text": "The army patrol did not decide to ignore him .", "targets": [{"span1": [7, 8], "span_text": "ignore", "label": -2.5}], "uID": "neg512", "idx": 272}
+{"text": "Wolf did not fail to convert the issue into a lesson .", "targets": [{"span1": [5, 6], "span_text": "convert", "label": 2.0}], "uID": "neg513", "idx": 273}
+{"text": "The Republicans in the House had not hoped to get things done with the president .", "targets": [{"span1": [9, 10], "span_text": "get", "label": -1.0}], "uID": "neg522", "idx": 274}
+{"text": "The quirk ceased when he did not turn to look at the blue uniformed man .", "targets": [{"span1": [9, 10], "span_text": "look", "label": -2.5}], "uID": "neg531", "idx": 275}
+{"text": "The city did not struggle to rebuild from Crusader wars and invasions .", "targets": [{"span1": [6, 7], "span_text": "rebuild", "label": 0.0}], "uID": "neg532", "idx": 276}
+{"text": "A program does not exist to assess deficiencies .", "targets": [{"span1": [6, 7], "span_text": "assess", "label": -3.0}], "uID": "neg539", "idx": 277}
+{"text": "I do not want to keep it .", "targets": [{"span1": [5, 6], "span_text": "keep", "label": -0.5}], "uID": "neg540", "idx": 278}
+{"text": "They did not forget to publish a notice of proposed rulemaking .", "targets": [{"span1": [5, 6], "span_text": "publish", "label": 3.0}], "uID": "neg550", "idx": 279}
+{"text": "The FCC did not forget to prepare an Initial Regulatory Flexibility Analysis .", "targets": [{"span1": [6, 7], "span_text": "prepare", "label": 2.5}], "uID": "neg552", "idx": 280}
+{"text": "Being at WBRC not learning to cope with the disability was a major feat for Miyares .", "targets": [{"span1": [6, 7], "span_text": "cope", "label": 1.0}], "uID": "neg559", "idx": 281}
+{"text": "Americans showed little to no interest in not learning to be financially literate .", "targets": [{"span1": [10, 11], "span_text": "be", "label": 1.0}], "uID": "neg560", "idx": 282}
+{"text": "And did not ask to consider what 's worse or more harmful .", "targets": [{"span1": [5, 6], "span_text": "consider", "label": -1.0}], "uID": "neg573", "idx": 283}
+{"text": "Jones ' lawyers went on several TV shows , not threatening to raise further allegations in court .", "targets": [{"span1": [12, 13], "span_text": "raise", "label": -2.0}], "uID": "neg574", "idx": 284}
+{"text": "94 Poirot did not turn to face us .", "targets": [{"span1": [6, 7], "span_text": "face", "label": -3.0}], "uID": "neg591", "idx": 285}
+{"text": "Arriving miners only did not serve to reinforce the strength of the missionaries .", "targets": [{"span1": [7, 8], "span_text": "reinforce", "label": -1.5}], "uID": "neg606", "idx": 286}
+{"text": "Recent proposals did not aim to help more Americans save for retirement .", "targets": [{"span1": [6, 7], "span_text": "help", "label": -2.0}], "uID": "neg608", "idx": 287}
+{"text": "David Rockefeller did not decline to have a vacation home on the Caribbean .", "targets": [{"span1": [6, 7], "span_text": "have", "label": 1.0}], "uID": "neg610", "idx": 288}
+{"text": "John Danforth actually did not decline to lead the independent investigation .", "targets": [{"span1": [7, 8], "span_text": "lead", "label": 1.5}], "uID": "neg611", "idx": 289}
+{"text": "Julius Hersheimmer did not pretend to be someone called Brown .", "targets": [{"span1": [6, 7], "span_text": "be", "label": -1.0}], "uID": "neg624", "idx": 290}
+{"text": "Brown did not reply that only a certain proportion of the funding can be applied toward development in R-01 grants , and some of the technology , for example interactive videos , can be quite expensive to develop .", "targets": [{"span1": [5, 38], "span_text": "only a certain proportion of the funding can be applied toward development in R-01 grants , and some of the technology , for example interactive videos , can be quite expensive to develop", "label": 1.0}], "uID": "neg639", "idx": 291}
+{"text": "Steve and Cokie Roberts did not confirm that they were there too .", "targets": [{"span1": [9, 10], "span_text": "were", "label": 0.0}], "uID": "neg643", "idx": 292}
+{"text": "Larry King does not hope that Will will be made commissioner .", "targets": [{"span1": [9, 10], "span_text": "made", "label": 1.0}], "uID": "neg648", "idx": 293}
+{"text": "An SBA official did not confirm that this practice is followed by some agencies .", "targets": [{"span1": [10, 11], "span_text": "followed", "label": -0.5}], "uID": "neg667", "idx": 294}
+{"text": "He did not imply that this area was a beautiful place .", "targets": [{"span1": [7, 8], "span_text": "was", "label": -0.5}], "uID": "neg670", "idx": 295}
+{"text": "CNN 's Bob Franken did not declare that Starr and the Jones team were joined at the hip .", "targets": [{"span1": [14, 15], "span_text": "joined", "label": 0.0}], "uID": "neg671", "idx": 296}
+{"text": "She did not observe that institutionalizing new practices was just the beginning of the task .", "targets": [{"span1": [8, 9], "span_text": "was", "label": 0.0}], "uID": "neg681", "idx": 297}
+{"text": "Optimists did not predict that Woods will make golf hip and popular , especially among nonwhite kids .", "targets": [{"span1": [7, 8], "span_text": "make", "label": -0.5}], "uID": "neg686", "idx": 298}
+{"text": "An article does not predict that Hillary will kill herself once she leaves office .", "targets": [{"span1": [8, 9], "span_text": "kill", "label": 0.0}], "uID": "neg688", "idx": 299}
+{"text": "He did not predict that it would spark controversy greatly .", "targets": [{"span1": [5, 10], "span_text": "it would spark controversy greatly", "label": 0.0}], "uID": "neg689", "idx": 300}
+{"text": "It was not implied that there was an increase of $ 109 .", "targets": [{"span1": [6, 7], "span_text": "was", "label": 0.5}], "uID": "neg695", "idx": 301}
+{"text": "The Counsel has not asserted that section 712-lrb-1-rrb- limits GAO 's audit authority to financial transactions .", "targets": [{"span1": [8, 9], "span_text": "limits", "label": -0.5}], "uID": "neg701", "idx": 302}
+{"text": "In these letters , he did not assert that I exceeded my lawful authority by undertaking this study .", "targets": [{"span1": [10, 11], "span_text": "exceeded", "label": -0.5}], "uID": "neg702", "idx": 303}
+{"text": "But Dorcas did not prove that the possibility was real .", "targets": [{"span1": [8, 9], "span_text": "was", "label": 0.5}], "uID": "neg729", "idx": 304}
+{"text": "None of this does not prove that realism is corrupt .", "targets": [{"span1": [8, 9], "span_text": "is", "label": 0.5}], "uID": "neg732", "idx": 305}
+{"text": "One Democratic staffer in the house did not reveal that previous GAO studies show LSC is flouting congressional stipulations .", "targets": [{"span1": [13, 14], "span_text": "show", "label": -2.0}], "uID": "neg733", "idx": 306}
+{"text": "Earlier this year , I did not announce that we would be reducing our field offices from 16 to 11 effective November 2000 .", "targets": [{"span1": [9, 23], "span_text": "we would be reducing our field offices from 16 to 11 effective November 2000", "label": 0.0}], "uID": "neg741", "idx": 307}
+{"text": "They jubilantly did not announce that the baby , born in May , shows no sign of the congenital condition .", "targets": [{"span1": [13, 14], "span_text": "shows", "label": 1.5}], "uID": "neg742", "idx": 308}
+{"text": "Norm , I do not see that Gene 's performance is tomorrow --- afternoon .", "targets": [{"span1": [10, 11], "span_text": "is", "label": -1.0}], "uID": "neg757", "idx": 309}
+{"text": "Everyone does not remember that the first lady blamed Flytrap on a vast right - wing conspiracy in a Today show interview during the first days of the crisis .", "targets": [{"span1": [8, 9], "span_text": "blamed", "label": 1.5}], "uID": "neg762", "idx": 310}
+{"text": "I do not remember that some people complained President Eisenhower was distracted from the business of his office because he was out playing golf so much .", "targets": [{"span1": [7, 8], "span_text": "complained", "label": 0.0}], "uID": "neg763", "idx": 311}
+{"text": "In particular , applying the model does not demonstrate that the burden of USO is very great for Poste Italiane and other posts with small per capita volumes .", "targets": [{"span1": [14, 15], "span_text": "is", "label": -1.0}], "uID": "neg777", "idx": 312}
+{"text": "I do not see that you have more important things to attend to .", "targets": [{"span1": [6, 7], "span_text": "have", "label": -1.0}], "uID": "neg783", "idx": 313}
+{"text": "Quayle may be a formidable candidate , but the subsequent article does not explain that George W. Bush has already been anointed the inevitable one .", "targets": [{"span1": [21, 22], "span_text": "anointed", "label": 1.0}], "uID": "neg785", "idx": 314}
+{"text": "At other times they do not complain that workfarers have taken good , desirable union jobs away from others .", "targets": [{"span1": [10, 11], "span_text": "taken", "label": 0.5}], "uID": "neg793", "idx": 315}
+{"text": "An article did not propose that the food stamp system is funding the war in Kosovo .", "targets": [{"span1": [11, 12], "span_text": "funding", "label": -1.5}], "uID": "neg800", "idx": 316}
+{"text": "They did not propose that the standard remained unchanged .", "targets": [{"span1": [7, 8], "span_text": "remained", "label": -0.5}], "uID": "neg804", "idx": 317}
+{"text": "The American Bar Association does not recommend that private firm attorneys contribute 50 hours per year to pro bono work .", "targets": [{"span1": [11, 12], "span_text": "contribute", "label": 0.0}], "uID": "neg826", "idx": 318}
+{"text": "The customers do not worry that the states will face budget issues .", "targets": [{"span1": [9, 10], "span_text": "face", "label": 0.5}], "uID": "neg838", "idx": 319}
+{"text": "I do not hope that this center boost communication with other centers .", "targets": [{"span1": [7, 8], "span_text": "boost", "label": -0.5}], "uID": "neg844", "idx": 320}
+{"text": "Tuppence did not explain that it was probably Julius .", "targets": [{"span1": [6, 7], "span_text": "was", "label": 1.5}], "uID": "neg847", "idx": 321}
+{"text": "News , a long book excerpt does not warn that Internet security is dangerously lax .", "targets": [{"span1": [12, 13], "span_text": "is", "label": 1.0}], "uID": "neg852", "idx": 322}
+{"text": "He did not learn that her name was Nema .", "targets": [{"span1": [7, 8], "span_text": "was", "label": 1.0}], "uID": "neg862", "idx": 323}
+{"text": "They did not understand that the group spoke for everyone in the legal services community .", "targets": [{"span1": [7, 8], "span_text": "spoke", "label": 1.0}], "uID": "neg864", "idx": 324}
+{"text": "It is not understood that increased nitrogen has no effect on estuaries .", "targets": [{"span1": [7, 8], "span_text": "has", "label": 1.0}], "uID": "neg866", "idx": 325}
+{"text": "I do not demand that you do it .", "targets": [{"span1": [6, 7], "span_text": "do", "label": -0.5}], "uID": "neg872", "idx": 326}
+{"text": "Do do not note that the quality of batik can vary greatly .", "targets": [{"span1": [5, 12], "span_text": "the quality of batik can vary greatly", "label": 0.5}], "uID": "neg882", "idx": 327}
+{"text": "She did not state that her job lets her help people .", "targets": [{"span1": [7, 8], "span_text": "lets", "label": 0.0}], "uID": "neg903", "idx": 328}
+{"text": "The Administration has not argued that CBO 's estimates are inflated .", "targets": [{"span1": [10, 11], "span_text": "inflated", "label": -1.0}], "uID": "neg904", "idx": 329}
+{"text": "Critics do not argue that the subsidy is idiotic .", "targets": [{"span1": [7, 8], "span_text": "is", "label": -1.5}], "uID": "neg909", "idx": 330}
+{"text": "All estimates do not indicate that this plan will have no benefits .", "targets": [{"span1": [9, 10], "span_text": "have", "label": -2.0}], "uID": "neg914", "idx": 331}
+{"text": "It is not reported that his followers are fully knowledgeable .", "targets": [{"span1": [7, 8], "span_text": "are", "label": -0.5}], "uID": "neg919", "idx": 332}
+{"text": "Gogot does not state that this is a Democratic Congress .", "targets": [{"span1": [6, 7], "span_text": "is", "label": 0.0}], "uID": "neg928", "idx": 333}
+{"text": "Drew did not know that he had no clue what had happened .", "targets": [{"span1": [6, 7], "span_text": "had", "label": 1.5}], "uID": "neg930", "idx": 334}
+{"text": "Tuppence did not think that this was right .", "targets": [{"span1": [6, 7], "span_text": "was", "label": -2.0}], "uID": "neg934", "idx": 335}
+{"text": "Poirot did not think that it might be salt .", "targets": [{"span1": [5, 9], "span_text": "it might be salt", "label": 0.0}], "uID": "neg936", "idx": 336}
+{"text": "He did not say that it was great .", "targets": [{"span1": [6, 7], "span_text": "was", "label": 0.0}], "uID": "neg957", "idx": 337}
+{"text": "The name do not suggest that it is open to the public .", "targets": [{"span1": [7, 8], "span_text": "is", "label": -0.5}], "uID": "neg959", "idx": 338}
+{"text": "Jon did not know that San'doro 's vision was blurred .", "targets": [{"span1": [9, 10], "span_text": "blurred", "label": 0.5}], "uID": "neg964", "idx": 339}
+{"text": "Julius did not know that it had been issued .", "targets": [{"span1": [8, 9], "span_text": "issued", "label": 1.0}], "uID": "neg980", "idx": 340}
+{"text": "But I do do not suggest that Miss Finn should remain here .", "targets": [{"span1": [7, 12], "span_text": "Miss Finn should remain here", "label": -1.5}], "uID": "neg986", "idx": 341}
+{"text": "Perhaps The Treasure of the Sierra Madre was showing in Cambridge that weekend and each economist did not realize that he would always have to worry about the other two guys .", "targets": [{"span1": [20, 31], "span_text": "he would always have to worry about the other two guys", "label": 2.0}], "uID": "neg992", "idx": 342}
+{"text": "Tommy appreciated her quick - wittedness in not realizing that he might be staying at the inn under an assumed name .", "targets": [{"span1": [10, 21], "span_text": "he might be staying at the inn under an assumed name", "label": 1.0}], "uID": "neg1000", "idx": 343}
+{"text": "I merely did not realize that it was possible , from your story , for Monsieur Lawrence to go to the poison cupboard .", "targets": [{"span1": [7, 8], "span_text": "was", "label": 1.0}], "uID": "neg1001", "idx": 344}
+{"text": "Students are not realizing that they have the power to change things .", "targets": [{"span1": [6, 7], "span_text": "have", "label": 2.0}], "uID": "neg1015", "idx": 345}
+{"text": "Ca'daan did not see that they were hungry .", "targets": [{"span1": [6, 7], "span_text": "were", "label": 2.0}], "uID": "neg1025", "idx": 346}
+{"text": "I did not assume that the door was locked .", "targets": [{"span1": [8, 9], "span_text": "locked", "label": 0.0}], "uID": "neg1066", "idx": 347}
+{"text": "She did not agree that we must set a bad example .", "targets": [{"span1": [5, 11], "span_text": "we must set a bad example", "label": -1.0}], "uID": "neg1071", "idx": 348}
+{"text": "The paper did not conclude that U.S. policy was always great .", "targets": [{"span1": [8, 9], "span_text": "was", "label": -2.0}], "uID": "neg1075", "idx": 349}
+{"text": "The act does not require that broadcasters include content favorable towards Congress .", "targets": [{"span1": [7, 8], "span_text": "include", "label": -0.5}], "uID": "neg1089", "idx": 350}
+{"text": "Kelly does not estimate that Newhoff spent 100 to 200 hours on pro bono cases .", "targets": [{"span1": [6, 7], "span_text": "spent", "label": -0.5}], "uID": "neg1093", "idx": 351}
+{"text": "In 1999 , it is not estimated that LSC grantees received approximately $ 10 .", "targets": [{"span1": [10, 11], "span_text": "received", "label": 0.0}], "uID": "neg1094", "idx": 352}
+{"text": "They do not conclude that savings rates will go up in the coming years .", "targets": [{"span1": [8, 9], "span_text": "go", "label": -1.5}], "uID": "neg1100", "idx": 353}
+{"text": "The EPA did not conclude that the Clean Air Act was a waste of money .", "targets": [{"span1": [10, 11], "span_text": "was", "label": -1.0}], "uID": "neg1101", "idx": 354}
+{"text": "Mrs. Cavendish 's desperation did not mean that her plans were half - baked .", "targets": [{"span1": [10, 11], "span_text": "were", "label": -1.5}], "uID": "neg1108", "idx": 355}
+{"text": "Golf Digest did not note that Snow Mountain is a mediocre golf course .", "targets": [{"span1": [8, 9], "span_text": "is", "label": 0.0}], "uID": "neg1116", "idx": 356}
+{"text": "Whether his successors in this role succeed or not , I do not suspect that Yates will one day be better remembered for another the U.S.", "targets": [{"span1": [19, 20], "span_text": "be", "label": -2.5}], "uID": "neg1131", "idx": 357}
+{"text": "Ca'daan did not notice that Jon 's shaved head had grown as tan as the rest of his body .", "targets": [{"span1": [10, 11], "span_text": "grown", "label": 1.5}], "uID": "neg1141", "idx": 358}
+{"text": "I do not feel that his role in Watergate has always been accurately displayed .", "targets": [{"span1": [13, 14], "span_text": "displayed", "label": -2.0}], "uID": "neg1146", "idx": 359}
+{"text": "The agencies did not determine that more environmental safety regulations were needed .", "targets": [{"span1": [11, 12], "span_text": "needed", "label": -2.0}], "uID": "neg1152", "idx": 360}
+{"text": "The Pentagon does not feel that it needs more sophisticated weapon systems .", "targets": [{"span1": [7, 8], "span_text": "needs", "label": -1.0}], "uID": "neg1158", "idx": 361}
+{"text": "The factual record does not prove that this approach is quite reasonable .", "targets": [{"span1": [9, 10], "span_text": "is", "label": -0.5}], "uID": "neg1165", "idx": 362}
+{"text": "These organizations do not recognize that stakeholders will have a lot to say in determining whether their programs succeed or fail .", "targets": [{"span1": [8, 9], "span_text": "have", "label": 2.0}], "uID": "neg1175", "idx": 363}
+{"text": "The monk was not convinced that the church had become corrupted by Pagan influences , and saw fit to destroy such a hive of heresy .", "targets": [{"span1": [10, 11], "span_text": "corrupted", "label": -2.0}], "uID": "neg1187", "idx": 364}
+{"text": "Tommy reacted mechanically when he was not told that somebody had asked Miss Tuppence to marry that morning .", "targets": [{"span1": [11, 12], "span_text": "asked", "label": 2.0}], "uID": "neg1190", "idx": 365}
+{"text": "I look forward to not seeing that you are a member of our organization when you donate $ 100 .", "targets": [{"span1": [8, 9], "span_text": "are", "label": -2.0}], "uID": "neg1198", "idx": 366}
+{"text": "We do not hope that you will consider a personal gift to help us offer our young people as possible .", "targets": [{"span1": [7, 8], "span_text": "consider", "label": 0.0}], "uID": "neg1209", "idx": 367}
+{"text": "I am quite sure he had no idea of what you meant . I had expected Poirot to be disappointed ; but , to my surprise , he did not reply that that was as he had thought , and that he was very glad .", "targets": [{"span1": [33, 34], "span_text": "was", "label": 0.5}], "uID": "neg1216", "idx": 368}
+{"text": "The mechanic did not determine that the car had been totaled , citing a cracked engine block .", "targets": [{"span1": [10, 11], "span_text": "totaled", "label": -2.5}], "uID": "neg1223", "idx": 369}
+{"text": "He did not add that the literature shows client outcomes and cost - benefits are improved by either research follow - up or a brief monitoring phone call .", "targets": [{"span1": [7, 8], "span_text": "shows", "label": 1.5}], "uID": "neg1253", "idx": 370}
+{"text": "Accounts vary as to what happened next , but it does not appear that Shearer was either duped by the Serbs or double - crossed by them .", "targets": [{"span1": [17, 18], "span_text": "duped", "label": -2.5}], "uID": "neg1272", "idx": 371}
+{"text": "Does a rise in the stock values do not indicate that the company is doing better ?", "targets": [{"span1": [14, 15], "span_text": "doing", "label": 0.0}], "uID": "neg1277", "idx": 372}
+{"text": "On the one hand , some economists are not concerned that low personal saving is undercutting national saving and leaving the United States more dependent on foreign capital inflows to maintain domestic investment .", "targets": [{"span1": [15, 16], "span_text": "undercutting", "label": 0.5}], "uID": "neg1308", "idx": 373}
+{"text": "Lionel Trilling did not write that it was typical for Americans to get married around the age of 20 .", "targets": [{"span1": [7, 8], "span_text": "was", "label": 0.5}], "uID": "neg1313", "idx": 374}
+{"text": "All were not convinced that anything so compelling and engrossing in the life of the young child must be profoundly significant .", "targets": [{"span1": [5, 21], "span_text": "anything so compelling and engrossing in the life of the young child must be profoundly significant", "label": 0.5}], "uID": "neg1314", "idx": 375}
+{"text": "Later in the piece , Brill does not write that Schmidt and another reporter declined all comment on their sources .", "targets": [{"span1": [14, 15], "span_text": "declined", "label": 0.5}], "uID": "neg1323", "idx": 376}
+{"text": "I do not fear that a certain software billionaire may be a nut job .", "targets": [{"span1": [5, 14], "span_text": "a certain software billionaire may be a nut job", "label": -0.5}], "uID": "neg1338", "idx": 377}
+{"text": "CAPMS does not acknowledge that ozone has no impact on human health .", "targets": [{"span1": [6, 7], "span_text": "has", "label": 0.0}], "uID": "neg1350", "idx": 378}
+{"text": "Then I did not discover that I had been guilty of a very grave oversight .", "targets": [{"span1": [8, 9], "span_text": "been", "label": 0.5}], "uID": "neg1369", "idx": 379}
+{"text": "I felt from the first that there was something wrong about him , and I always did not suspect that it was he who silenced Mrs. Vandemeyer so appositely .", "targets": [{"span1": [21, 22], "span_text": "was", "label": -1.0}], "uID": "neg1382", "idx": 380}
+{"text": "He does not mention that major economies of scale can be applied to the processing and transportation of mail .", "targets": [{"span1": [5, 19], "span_text": "major economies of scale can be applied to the processing and transportation of mail", "label": 0.5}], "uID": "neg1389", "idx": 381}
+{"text": "He did not mention that you hope that the public minds .", "targets": [{"span1": [6, 7], "span_text": "hope", "label": 0.0}], "uID": "neg1398", "idx": 382}
+{"text": "Callers to the network are being not told that prayer is foolish .", "targets": [{"span1": [10, 11], "span_text": "is", "label": -1.5}], "uID": "neg1402", "idx": 383}
+{"text": "The attorneys did not contend that the city has an obligation to pay the tenants for damages they have sustained by being evicted for property that will be used for a public purpose .", "targets": [{"span1": [8, 9], "span_text": "has", "label": -0.5}], "uID": "neg1406", "idx": 384}
+{"text": "The law does not provide that the Postal Service may issue an occasional request .", "targets": [{"span1": [6, 14], "span_text": "the Postal Service may issue an occasional request", "label": 0.0}], "uID": "neg1410", "idx": 385}
+{"text": "Gentilello did not observe that his publications in trauma journals have earned him a great deal of attention and have raised awareness .", "targets": [{"span1": [11, 12], "span_text": "earned", "label": -0.5}], "uID": "neg1420", "idx": 386}
+{"text": "Based on the fragment , Fink does not speculate that the original flute contained at least six holes and was close to 16 inches long .", "targets": [{"span1": [13, 14], "span_text": "contained", "label": -0.5}], "uID": "neg1437", "idx": 387}
+{"text": "Many do not believe that censure is unconstitutional", "targets": [{"span1": [6, 7], "span_text": "is", "label": -0.5}], "uID": "neg1446", "idx": 388}
+{"text": "It may just have not been that we were too early .", "targets": [{"span1": [8, 9], "span_text": "were", "label": -1.0}], "uID": "neg1447", "idx": 389}
+{"text": "Yes , we did not hear that Mrs. Inglethorp wrote to you last night .", "targets": [{"span1": [9, 10], "span_text": "wrote", "label": 1.0}], "uID": "neg1460", "idx": 390}
+{"text": "It 's not speculated that aeons ago this may have been a forest extinguished by the eruption of some volcano now deep under the sea .", "targets": [{"span1": [5, 25], "span_text": "aeons ago this may have been a forest extinguished by the eruption of some volcano now deep under the sea", "label": -0.5}], "uID": "neg1461", "idx": 391}
+{"text": "He was not concerned that Tommy had been kidnapped into slavery .", "targets": [{"span1": [8, 9], "span_text": "kidnapped", "label": 2.5}], "uID": "neg1478", "idx": 392}
+{"text": "This top - level support is especially critical not given that an investment of time and money is often needed in these types of efforts .", "targets": [{"span1": [19, 20], "span_text": "needed", "label": 2.0}], "uID": "neg1483", "idx": 393}
