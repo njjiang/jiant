@@ -3376,6 +3376,7 @@ class BooleanQuestionTask(PairClassificationTask):
 @register_task("all-factuality", rel_path="all-factuality")
 @register_task("all_but_cb", rel_path="all_but_cb")
 @register_task("beaver", rel_path="beaver/")
+@register_task("mv2", rel_path="mv2/")
 class FactualityTask(Task):
     def __init__(self, path, max_seq_len, name, **kw):
         super().__init__(name, **kw)
@@ -3451,7 +3452,10 @@ class FactualityTask(Task):
     def update_metrics(self, logits, labels, tagmask=None):
         # for aggregating two metrics together.
         # so that we are maximizing both pearson R and 1-MAE
-        self.mae_scorer(mean_absolute_error(logits, labels))  # update average MSE
+        try:
+            self.mae_scorer(mean_absolute_error(logits, labels))  # update average MSE
+        except:
+            print(logits, labels)
         self.pearson_scorer(logits, labels)
         return
 
