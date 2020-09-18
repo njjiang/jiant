@@ -14,9 +14,9 @@
 >>>>>>> 6de312e... add scripts and data
 set -e
 OVERRIDES="exp_name = EXP_multi_task_factuality"
-OVERRIDES+=", run_name = \"3282020\""
-OVERRIDES+=", pretrain_tasks = \"factbank,meantime,uw,uds-ih2,CB,CB2,rp\""
-OVERRIDES+=", target_tasks = \"factbank,meantime,uw,uds-ih2,CB,CB2,rp\""
+OVERRIDES+=", run_name = \"factbank,meantime,uw,uds-ih2,CB,rp,mv2_2200\""
+OVERRIDES+=", pretrain_tasks = \"factbank,meantime,uw,uds-ih2,CB,rp,mv2_2200\""
+OVERRIDES+=", target_tasks = \"factbank,meantime,uw,uds-ih2,CB,rp,mv2_2200\""
 OVERRIDES+=", do_pretrain = 1"
 OVERRIDES+=", do_target_task_training = 0"
 OVERRIDES+=", do_full_eval = 1"

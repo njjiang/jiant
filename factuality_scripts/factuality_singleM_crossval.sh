@@ -3,7 +3,7 @@
 # Usage: for i in `seq 0 9`; do ./factuality_scripts/factuality_singleM_crossval.sh CB $i; done
 
 set -e
-TASK=${1:-"CB"}
+task=${1:-"CB"}
 split=${2:-"0"}
 MNLI_CHECKPOINT=${3:-"bert-mnli/tuning-0/model_state_pretrain_val_76.best.th"}
 TASK="${task}-split${split}"
