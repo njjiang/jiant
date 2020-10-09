@@ -5,7 +5,7 @@
 set -e
 task=${1:-"CB"}
 split=${2:-"0"}
-TASK="${task}-split${split}"
+TASK="${task}___split${split}"
 
 OVERRIDES="exp_name = EXP_single_task_factuality"
 OVERRIDES+=", run_name = ${TASK}"

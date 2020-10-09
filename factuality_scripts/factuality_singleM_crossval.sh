@@ -6,7 +6,7 @@ set -e
 task=${1:-"CB"}
 split=${2:-"0"}
 MNLI_CHECKPOINT=${3:-"bert-mnli/tuning-0/model_state_pretrain_val_76.best.th"}
-TASK="${task}-split${split}"
+TASK="${task}___split${split}"
 
 
 OVERRIDES="exp_name = EXP_mnli_transfer_factuality"
